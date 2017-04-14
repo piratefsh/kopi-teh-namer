@@ -475,29 +475,40 @@ header {
   margin-bottom: 32px;
   padding: 32px 0; }
 
-form fieldset {
-  border: 0;
-  margin: 8px 0;
-  padding: 8px 0; }
-  form fieldset label em {
+form {
+  display: flex;
+  flex-flow: row wrap; }
+  form fieldset {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 16px;
+    padding: 0 16px;
+    width: 50%; }
+    form fieldset .input-group:nth-child(2) {
+      border-top: 1px solid #dddddd;
+      padding-top: 8px; }
+
+label,
+.label {
+  margin-bottom: 8px; }
+  label em,
+  .label em {
     color: #999999;
     font-size: 0.8em; }
-  form fieldset input,
-  form fieldset select {
-    border: 1px solid #ccc; }
-  form fieldset input[type=radio] + label {
-    margin-left: 4px;
-    display: inline-block; }
-  form fieldset .input-group.label {
-    font-weight: bold;
-    text-align: right;
-    width: 40%;
-    padding-left: 16px; }
-  form fieldset .input-group {
-    vertical-align: top;
-    box-sizing: border-box;
-    padding-right: 16px;
-    display: inline-block;
-    width: 60%; }
-    form fieldset .input-group > div {
-      margin-bottom: 8px; }
+
+input,
+select {
+  border: 1px solid #cccccc; }
+
+input[type=radio] + label {
+  margin-left: 4px; }
+
+.input-group {
+  box-sizing: border-box;
+  padding-right: 16px;
+  vertical-align: top; }
+  .input-group > div {
+    margin-bottom: 8px; }
+  .input-group .label {
+    font-weight: bold; }
