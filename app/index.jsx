@@ -3,9 +3,9 @@ import 'styles/main.scss';
 
 import ReactDOM from 'react-dom';
 import React from 'react';
-import DrinkSelector from './DrinkSelector';
+import DrinkOrder from './DrinkOrder';
 
 ReactDOM.render(
-  <DrinkSelector />,
+  <DrinkOrder />,
     document.getElementById('main')
 );

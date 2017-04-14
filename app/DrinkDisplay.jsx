@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function DrinkDisplay(props) {
   return (
@@ -10,5 +11,9 @@ function DrinkDisplay(props) {
     </header>
   );
 }
+
+DrinkDisplay.propTypes = {
+  drink: PropTypes.object.isRequired,
+};
 
 export default DrinkDisplay;
