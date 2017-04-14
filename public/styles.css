@@ -463,7 +463,8 @@ body {
   font-family: Helvetica;
   margin: 0;
   padding: 0;
-  color: #444; }
+  color: #444;
+  padding-top: 176px; }
 
 .container {
   margin: 0 auto;
@@ -471,9 +472,14 @@ body {
   padding: 0 8px; }
 
 header {
+  box-sizing: border-box;
+  height: 160px;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #b6e8d9;
-  margin-bottom: 32px;
-  padding: 32px 0; }
+  box-shadow: 0 0 3px #42c39c;
+  padding: 16px 0; }
 
 form {
   display: flex;

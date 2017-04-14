@@ -3,12 +3,13 @@
 $space: 8px;
 $white: #ffffff;
 $skyblue: #b6e8d9;
-
+$header-height: 160px;
 body {
   font-family: Helvetica;
   margin: 0;
   padding: 0;
   color: #444;
+  padding-top: $header-height + 16px;
 }
 
 .container {
@@ -18,10 +19,16 @@ body {
 }
 
 header {
+  box-sizing: border-box;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: $skyblue;
+  box-shadow: 0 0 3px darken($skyblue, 30%);
+  // border-bottom: 1px solid darken($skyblue, 10%);
   // color: $white;
-  margin-bottom: 32px;
-  padding: $space * 4 0;
+  padding: $space * 2 0;
 
 }
 
