@@ -23283,34 +23283,46 @@
 	  }, {
 	    key: "render",
 	    value: function render() {
+	      var _this = this;
+
 	      return _react2["default"].createElement(
 	        "fieldset",
 	        { className: "form-group" },
 	        _react2["default"].createElement(
-	          "label",
-	          null,
-	          this.props.label
+	          "div",
+	          { className: "input-group label" },
+	          _react2["default"].createElement(
+	            "label",
+	            null,
+	            this.props.label
+	          )
 	        ),
 	        _react2["default"].createElement(
 	          "div",
-	          null,
-	          _react2["default"].createElement(
-	            "select",
-	            {
-	              onChange: this.onChange,
-	              value: this.state.value
-	            },
-	            this.props.variations.map(function (v, i) {
-	              return _react2["default"].createElement(
-	                "option",
-	                {
-	                  key: i,
-	                  value: i
-	                },
+	          {
+	            className: "input-group"
+	          },
+	          this.props.variations.map(function (v, i) {
+	            var id = _this.props.label + "-" + i;
+	            return _react2["default"].createElement(
+	              "div",
+	              null,
+	              _react2["default"].createElement("input", {
+	                type: "radio",
+	                onChange: _this.onChange,
+	                checked: _this.state.value == i ? 'checked' : '',
+	                name: _this.props.label.split(/\s/).join('_'),
+	                key: i,
+	                value: i,
+	                id: id
+	              }),
+	              _react2["default"].createElement(
+	                "label",
+	                { htmlFor: id },
 	                v.formal_definition
-	              );
-	            })
-	          )
+	              )
+	            );
+	          })
 	        )
 	      );
 	    }
@@ -23396,7 +23408,7 @@
 
 	var ORDER = [{
 	  label: '',
-	  definition: '1 order',
+	  definition: 'one',
 	  formal_definition: 'single order'
 	}, {
 	  label: 'sua',
