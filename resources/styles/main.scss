@@ -1,0 +1,46 @@
+@import '~normalize.css/normalize.css';
+
+$space: 8px;
+
+body {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+header {
+  background-color: skyblue;
+  color: white;
+  padding: $space*4;
+  margin-bottom: 32px;
+
+}
+
+article {
+}
+
+form{
+  display: flex;
+  flex-wrap: wrap;
+  fieldset {
+    width: 50%;
+    display: flex;
+    label, input {
+      flex: 1
+    }
+
+    border: none;
+    padding: 8px 0px;
+    margin: 8px 0px;
+
+    input, 
+    select {
+      margin-top: 8px;
+    }
+  }
+}

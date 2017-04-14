@@ -3,7 +3,7 @@ var path = require('path'),
 
 module.exports = {
     entry: {
-        app: ['./app/index.js']
+        app: ['./app/index.jsx']
     },
     output: {
         path: path.resolve(__dirname, 'public'),

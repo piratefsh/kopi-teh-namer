@@ -17,11 +17,10 @@ class VariationSelector extends React.Component {
   }
 
   render() {
-    return (<fieldset className="form-group row">
-      <label className="col-sm-2 col-form-label">{this.props.label}</label>
-      <div className="col-sm-10">
+    return (<fieldset className="form-group">
+      <label>{this.props.label}</label>
+      <div>
         <select
-          className="form-control"
           onChange={this.onChange}
           value={this.state.value}
         >
