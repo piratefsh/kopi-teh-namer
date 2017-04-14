@@ -23304,6 +23304,11 @@
 	          },
 	          this.props.variations.map(function (v, i) {
 	            var id = _this.props.label + "-" + i;
+	            var def = v["default"] ? _react2["default"].createElement(
+	              "em",
+	              null,
+	              "default"
+	            ) : null;
 	            return _react2["default"].createElement(
 	              "div",
 	              null,
@@ -23319,7 +23324,9 @@
 	              _react2["default"].createElement(
 	                "label",
 	                { htmlFor: id },
-	                v.formal_definition
+	                v.formal_definition,
+	                " ",
+	                def
 	              )
 	            );
 	          })
@@ -23356,6 +23363,7 @@
 	var MILK = [{
 	  label: '',
 	  definition: '',
+	  'default': true,
 	  formal_definition: 'condensed milk'
 
 	}, {
@@ -23371,6 +23379,7 @@
 	var DILUTION = [{
 	  label: '',
 	  definition: '',
+	  'default': true,
 	  formal_definition: '10% water dilution'
 	}, {
 	  label: 'po',
@@ -23389,6 +23398,7 @@
 	var TEMPERATURE = [{
 	  label: '',
 	  definition: 'hot',
+	  'default': true,
 	  formal_definition: 'hot'
 	}, {
 	  label: 'peng',
@@ -23399,6 +23409,7 @@
 	var TOGO = [{
 	  label: '',
 	  definition: 'having here',
+	  'default': true,
 	  formal_definition: 'having here'
 	}, {
 	  label: 'da bao',
@@ -23409,6 +23420,7 @@
 	var ORDER = [{
 	  label: '',
 	  definition: 'one',
+	  'default': true,
 	  formal_definition: 'single order'
 	}, {
 	  label: 'sua',
@@ -23417,25 +23429,26 @@
 	}];
 
 	var SWEETNESS = [{
-	  label: '',
-	  definition: 'normal',
-	  formal_definition: '100% sugar level'
-	}, {
 	  label: 'kosong',
 	  definition: 'no sugar',
 	  formal_definition: '0% sugar level'
-	}, {
-	  label: 'siew dai',
-	  definition: 'less sweet',
-	  formal_definition: '50% sugar level'
 	}, {
 	  label: 'siew siew dai',
 	  definition: 'less less sweet',
 	  formal_definition: '25% sugar level'
 	}, {
+	  label: 'siew dai',
+	  definition: 'less sweet',
+	  formal_definition: '50% sugar level'
+	}, {
 	  label: 'ga dai',
 	  definition: 'extra sweet',
 	  formal_definition: '150% sugar level'
+	}, {
+	  label: '',
+	  definition: 'normal',
+	  'default': true,
+	  formal_definition: '100% sugar level'
 	}];
 
 	exports['default'] = {
