@@ -13,16 +13,16 @@ const BASE = [
 
 const MILK = [
   {
+    label: 'o',
+    definition: 'black',
+    formal_definition: 'no condensed or evaporated milk',
+  },
+  {
     label: '',
     definition: '',
     default: true,
     formal_definition: 'condensed milk',
 
-  },
-  {
-    label: 'o',
-    definition: 'black',
-    formal_definition: 'no condensed or evaporated milk',
   },
   {
     label: 'c',
@@ -33,6 +33,16 @@ const MILK = [
 
 const DILUTION = [
   {
+    label: 'di lo',
+    definition: 'super thick',
+    formal_definition: '0% water dilution',
+  },
+  {
+    label: 'gao',
+    definition: 'thick',
+    formal_definition: '5% water dilution',
+  },
+  {
     label: '',
     definition: '',
     default: true,
@@ -42,16 +52,6 @@ const DILUTION = [
     label: 'po',
     definition: 'thin',
     formal_definition: '20% water dilution',
-  },
-  {
-    label: 'gao',
-    definition: 'thick',
-    formal_definition: '5% water dilution',
-  },
-  {
-    label: 'di lo',
-    definition: 'super thick',
-    formal_definition: '0% water dilution',
   },
 ];
 
@@ -114,15 +114,15 @@ const SWEETNESS = [
     formal_definition: '50% sugar level',
   },
   {
-    label: 'ga dai',
-    definition: 'extra sweet',
-    formal_definition: '150% sugar level',
-  },
-  {
     label: '',
     definition: 'normal',
     default: true,
     formal_definition: '100% sugar level',
+  },
+  {
+    label: 'ga dai',
+    definition: 'extra sweet',
+    formal_definition: '150% sugar level',
   },
 ];
 

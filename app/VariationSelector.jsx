@@ -3,9 +3,12 @@ import React from 'react';
 class VariationSelector extends React.Component {
   constructor(props) {
     super(props);
+    const defaultSelection = 
+
     this.state = {
-      value: 0,
+      value: props.value,
     };
+
     this.onChange = this.onChange.bind(this);
   }
 

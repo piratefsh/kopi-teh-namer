@@ -7,19 +7,14 @@ import DrinkDisplay from './DrinkDisplay';
 class DrinkSelector extends React.Component {
   constructor(props) {
     super(props);
-    const ids = {
-      base: 0,
-      milk: 0,
-      dilution: 0,
-      temperature: 0,
-      sweetness: 0,
-      togo: 0,
-      order: 0,
-    };
-
+    const selection = {}
+    Object.keys(Constants).forEach((key) => {
+      selection[key] = Constants[key].reduce((acc, v, i) => v.default ? i : acc, 0);
+    });
+    const drink =  new Drink(this.selections(selection));
     this.state = {
-      selectionIds: ids,
-      drink: new Drink(this.selections(ids)),
+      selectionIds: selection,
+      drink: drink
     };
 
     this.updateSelection = this.updateSelection.bind(this);
@@ -29,17 +24,18 @@ class DrinkSelector extends React.Component {
     const keys = Object.keys(ids);
     const sel = {};
     keys.forEach((k) => {
-      sel[k] = Constants[k.toUpperCase()][ids[k]];
+      sel[k.toLowerCase()] = Constants[k][ids[k]];
     });
     return sel;
   }
 
   updateSelection(key, i) {
     const ids = this.state.selectionIds;
-    ids[key.toLowerCase()] = i;
+    ids[key] = i;
+    const drink = new Drink(this.selections(ids));
     this.setState({
       selectionIds: ids,
-      drink: new Drink(this.selections()),
+      drink: drink,
     });
   }
 
@@ -47,6 +43,7 @@ class DrinkSelector extends React.Component {
     const selectors = Object.keys(Constants).map((key, i) => <VariationSelector
       label={key.toLowerCase()}
       key={i}
+      value={this.state.selectionIds[key]}
       variations={Constants[key]}
       onChange={this.updateSelection.bind(null, key)}
     />);
