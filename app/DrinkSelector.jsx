@@ -21,6 +21,8 @@ class DrinkSelector extends React.Component {
       selectionIds: ids,
       drink: new Drink(this.selections(ids)),
     };
+
+    this.updateSelection = this.updateSelection.bind(this);
   }
 
   selections(ids = this.state.selectionIds) {
@@ -46,7 +48,7 @@ class DrinkSelector extends React.Component {
       label={key.toLowerCase()}
       key={i}
       variations={Constants[key]}
-      onChange={this.updateSelection.bind(this, key)}
+      onChange={this.updateSelection.bind(null, key)}
     />);
 
     return (<div>
