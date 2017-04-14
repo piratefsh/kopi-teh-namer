@@ -15,6 +15,7 @@ const MILK = [
   {
     label: '',
     definition: '',
+    default: true,
     formal_definition: 'condensed milk',
 
   },
@@ -34,6 +35,7 @@ const DILUTION = [
   {
     label: '',
     definition: '',
+    default: true,
     formal_definition: '10% water dilution',
   },
   {
@@ -57,6 +59,7 @@ const TEMPERATURE = [
   {
     label: '',
     definition: 'hot',
+    default: true,
     formal_definition: 'hot',
   },
   {
@@ -70,6 +73,7 @@ const TOGO = [
   {
     label: '',
     definition: 'having here',
+    default: true,
     formal_definition: 'having here',
   },
   {
@@ -83,6 +87,7 @@ const ORDER = [
   {
     label: '',
     definition: 'one',
+    default: true,
     formal_definition: 'single order',
   },
   {
@@ -94,19 +99,9 @@ const ORDER = [
 
 const SWEETNESS = [
   {
-    label: '',
-    definition: 'normal',
-    formal_definition: '100% sugar level',
-  },
-  {
     label: 'kosong',
     definition: 'no sugar',
     formal_definition: '0% sugar level',
-  },
-  {
-    label: 'siew dai',
-    definition: 'less sweet',
-    formal_definition: '50% sugar level',
   },
   {
     label: 'siew siew dai',
@@ -114,9 +109,20 @@ const SWEETNESS = [
     formal_definition: '25% sugar level',
   },
   {
+    label: 'siew dai',
+    definition: 'less sweet',
+    formal_definition: '50% sugar level',
+  },
+  {
     label: 'ga dai',
     definition: 'extra sweet',
     formal_definition: '150% sugar level',
+  },
+  {
+    label: '',
+    definition: 'normal',
+    default: true,
+    formal_definition: '100% sugar level',
   },
 ];
 

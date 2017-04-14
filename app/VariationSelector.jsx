@@ -30,6 +30,7 @@ class VariationSelector extends React.Component {
         {
         this.props.variations.map((v, i) => {
           const id = `${this.props.label}-${i}`;
+          const def = v.default ? <em>default</em> : null;
           return (
             <div>
               <input
@@ -41,7 +42,7 @@ class VariationSelector extends React.Component {
                 value={i}
                 id={id}
               />
-              <label htmlFor={id}>{v.formal_definition}</label>
+              <label htmlFor={id}>{v.formal_definition} {def}</label>
             </div>
           );
         }
