@@ -32,13 +32,12 @@ class VariationSelector extends React.Component {
           const id = `${this.props.label}-${i}`;
           const def = v.default ? <em>default</em> : null;
           return (
-            <div>
+            <div key={i}>
               <input
                 type="radio"
                 onChange={this.onChange}
                 checked={this.state.value == i ? 'checked' : ''}
                 name={this.props.label.split(/\s/).join('_')}
-                key={i}
                 value={i}
                 id={id}
               />
