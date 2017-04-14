@@ -64,7 +64,7 @@ const temp = [
 const togo = [
   {
     label: '',
-    definition: 'have here',
+    definition: 'having here',
     formal_definition: 'having here'
   },
   {
@@ -78,7 +78,7 @@ const numOrders = [
   {
     label: '',
     definition: '1 order',
-    formal_definition: '1 order'
+    formal_definition: 'single order'
   },
   {
     label: 'sua',

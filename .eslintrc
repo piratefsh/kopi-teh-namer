@@ -1,0 +1,19 @@
+{
+    "extends": "airbnb",
+
+    "installedESLint": true,
+
+    "plugins": [
+        "react"
+    ],
+
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+
+    "env": {
+      "browser": true
+    }
+}
