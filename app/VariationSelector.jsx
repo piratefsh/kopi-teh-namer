@@ -18,23 +18,35 @@ class VariationSelector extends React.Component {
 
   render() {
     return (<fieldset className="form-group">
-      <label>{this.props.label}</label>
-      <div>
-        <select
-          onChange={this.onChange}
-          value={this.state.value}
-        >
-          {
-          this.props.variations.map((v, i) => (
-            <option
-              key={i}
-              value={i}
-            >
-              {v.formal_definition}
-            </option>))
+      <div className="input-group label">
+        <label>
+          {this.props.label}
+        </label>
+      </div>
 
+      <div
+        className="input-group"
+      >
+        {
+        this.props.variations.map((v, i) => {
+          const id = `${this.props.label}-${i}`;
+          return (
+            <div>
+              <input
+                type="radio"
+                onChange={this.onChange}
+                checked={this.state.value == i ? 'checked' : ''}
+                name={this.props.label.split(/\s/).join('_')}
+                key={i}
+                value={i}
+                id={id}
+              />
+              <label htmlFor={id}>{v.formal_definition}</label>
+            </div>
+          );
         }
-        </select>
+        )
+      }
       </div>
     </fieldset>);
   }

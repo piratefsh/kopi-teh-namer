@@ -82,7 +82,7 @@ const TOGO = [
 const ORDER = [
   {
     label: '',
-    definition: '1 order',
+    definition: 'one',
     formal_definition: 'single order',
   },
   {
