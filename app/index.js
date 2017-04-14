@@ -9,7 +9,7 @@ const kopi = new Kopi({
   base: Constants.BASE[0], 
   milk:Constants.MILK[0], 
   dilution: Constants.DILUTION[0], 
-  temp:Constants.TEMPERATURE[0], 
+  temperature:Constants.TEMPERATURE[0], 
   sweetness:Constants.SWEETNESS[0], 
   togo:Constants.TOGO[0], 
   order:Constants.ORDER[0]

@@ -4,22 +4,32 @@ class VariationSelector extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      value: 1
+      value: 0
     }
+    this.onChange = this.onChange.bind(this)
+  }
+
+  onChange(e){
+    this.setState({
+      value: e.target.value
+    });
+    this.props.onChange(parseInt(e.target.value))
   }
 
   render(){
     return (<fieldset className='form-group row'>
       <label className='col-sm-2 col-form-label'>{this.props.label}</label>
       <div className= 'col-sm-10'>
-      <select className="form-control" value={this.state.value}>
+      <select className="form-control" 
+        onChange={this.onChange} 
+        value={this.state.value}>
         {
           this.props.variations.map((v, i) => {
             return(
               <option 
                 key={i} 
                 value={i}>
-                {v.label}
+                {v.definition || v.formal_definition}
               </option>)
           }) 
 

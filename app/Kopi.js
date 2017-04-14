@@ -3,15 +3,17 @@ Array.prototype.clean = function() {
 }
 
 export default class Kopi{
-  constructor({base, milk, dilution, temp, sweetness, togo, order}){
-    this.parts = [base, milk, dilution, temp, sweetness, togo, order]
+  constructor({base, milk, dilution, temperature, sweetness, togo, order}){
+    this.parts = [base, milk, dilution, temperature, sweetness, togo, order]
     
   }
   toString(){
     const name = this.parts.map((i) => i.label).clean().join(' ')
-    const def = this.parts.map((i) => i.definition).clean().join(' ')
+    return name 
+  }
+  toFormalDefinition(){
     const formalDef = this.parts.map((i) => i.formal_definition).clean().join('\n  + ')
-    
-    return `${name}\n  ${def}\n  = ${formalDef}\n`;
+    const def = this.parts.map((i) => i.definition).clean().join(' ')
+    return formalDef
   }
 }

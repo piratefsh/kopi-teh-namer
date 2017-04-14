@@ -51,7 +51,7 @@ const dilution = [
 const temp = [
   {
     label: '',
-    definition: '',
+    definition: 'hot',
     formal_definition: 'hot'
   },
   {
@@ -64,7 +64,7 @@ const temp = [
 const togo = [
   {
     label: '',
-    definition: '',
+    definition: 'have here',
     formal_definition: 'having here'
   },
   {
@@ -77,7 +77,7 @@ const togo = [
 const numOrders = [
   {
     label: '',
-    definition: '',
+    definition: '1 order',
     formal_definition: '1 order'
   },
   {
@@ -90,7 +90,7 @@ const numOrders = [
 const sweetness = [
   {
     label: '',
-    definition: '',
+    definition: 'normal',
     formal_definition: '100% sugar level'
   },
   {
