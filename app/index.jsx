@@ -3,9 +3,9 @@ import 'styles/main.scss';
 
 import ReactDOM from 'react-dom';
 import React from 'react';
-import KopiSelector from './KopiSelector';
+import DrinkSelector from './DrinkSelector';
 
 ReactDOM.render(
-  <KopiSelector />,
+  <DrinkSelector />,
     document.getElementById('main')
 );

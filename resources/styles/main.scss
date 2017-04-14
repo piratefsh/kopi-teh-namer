@@ -1,6 +1,8 @@
 @import '~normalize.css/normalize.css';
 
 $space: 8px;
+$white: #ffffff;
+$skyblue: #87ceeb;
 
 body {
   font-family: Helvetica;
@@ -14,29 +16,28 @@ body {
 }
 
 header {
-  background-color: skyblue;
-  color: white;
-  padding: $space*4;
+  background-color: $skyblue;
+  color: $white;
   margin-bottom: 32px;
+  padding: $space * 4;
 
 }
 
-article {
-}
-
-form{
+form {
   display: flex;
   flex-wrap: wrap;
-  fieldset {
-    width: 50%;
-    display: flex;
-    label, input {
-      flex: 1
-    }
 
-    border: none;
-    padding: 8px 0px;
-    margin: 8px 0px;
+  fieldset {
+    border: 0;
+    display: flex;
+    margin: 8px 0;
+    padding: 8px 0;
+    width: 100%;
+
+    label,
+    input {
+      flex: 1;
+    }
 
     input, 
     select {

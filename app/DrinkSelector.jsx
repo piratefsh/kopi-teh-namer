@@ -1,10 +1,10 @@
 import React from 'react';
 import VariationSelector from './VariationSelector';
 import Constants from './Constants';
-import Kopi from './Kopi';
-import KopiDisplay from './KopiDisplay';
+import Drink from './Drink';
+import DrinkDisplay from './DrinkDisplay';
 
-class KopiSelector extends React.Component {
+class DrinkSelector extends React.Component {
   constructor(props) {
     super(props);
     const ids = {
@@ -19,7 +19,7 @@ class KopiSelector extends React.Component {
 
     this.state = {
       selectionIds: ids,
-      kopi: new Kopi(this.selections(ids)),
+      drink: new Drink(this.selections(ids)),
     };
   }
 
@@ -37,6 +37,7 @@ class KopiSelector extends React.Component {
     ids[key.toLowerCase()] = i;
     this.setState({
       selectionIds: ids,
+      drink: new Drink(this.selections()),
     });
   }
 
@@ -49,7 +50,7 @@ class KopiSelector extends React.Component {
     />);
 
     return (<div>
-      <KopiDisplay kopi={this.state.kopi} />
+      <DrinkDisplay drink={this.state.drink} />
       <div className="container">
         <form>
           {selectors}
@@ -60,4 +61,4 @@ class KopiSelector extends React.Component {
 
 }
 
-export default KopiSelector;
+export default DrinkSelector;

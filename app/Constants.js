@@ -1,126 +1,131 @@
-const drinks = [
+const BASE = [
   {
     label: 'Kopi',
     definition: 'coffee',
-    formal_definition: 'coffee'
-  }
-]
+    formal_definition: 'coffee',
+  },
+  {
+    label: 'Teh',
+    definition: 'tea',
+    formal_definition: 'tea',
+  },
+];
 
-const taste = [
+const MILK = [
   {
     label: '',
     definition: '',
-    formal_definition: 'condensed milk'
-    
+    formal_definition: 'condensed milk',
+
   },
   {
     label: 'o',
     definition: 'black',
-    formal_definition: 'no condensed or evaporated milk'
+    formal_definition: 'no condensed or evaporated milk',
   },
   {
     label: 'c',
     definition: 'evaporated milk',
-    formal_definition: 'evaporated milk'
-  }
-]
+    formal_definition: 'evaporated milk',
+  },
+];
 
-const dilution = [
+const DILUTION = [
   {
     label: '',
     definition: '',
-    formal_definition: '10% water dilution'
+    formal_definition: '10% water dilution',
   },
   {
     label: 'po',
     definition: 'thin',
-    formal_definition: '20% water dilution'
+    formal_definition: '20% water dilution',
   },
   {
     label: 'gao',
     definition: 'thick',
-    formal_definition: '5% water dilution'
+    formal_definition: '5% water dilution',
   },
   {
     label: 'di lo',
     definition: 'super thick',
-    formal_definition: '0% water dilution'
-  }
-]
+    formal_definition: '0% water dilution',
+  },
+];
 
-const temp = [
+const TEMPERATURE = [
   {
     label: '',
     definition: 'hot',
-    formal_definition: 'hot'
+    formal_definition: 'hot',
   },
   {
     label: 'peng',
     definition: 'iced',
-    formal_definition: 'iced'
-  }
-]
+    formal_definition: 'iced',
+  },
+];
 
-const togo = [
+const TOGO = [
   {
     label: '',
     definition: 'having here',
-    formal_definition: 'having here'
+    formal_definition: 'having here',
   },
   {
     label: 'da bao',
     definition: 'takeaway',
-    formal_definition: 'takeaway'
-  }
-]
+    formal_definition: 'takeaway',
+  },
+];
 
-const numOrders = [
+const ORDER = [
   {
     label: '',
     definition: '1 order',
-    formal_definition: 'single order'
+    formal_definition: 'single order',
   },
   {
     label: 'sua',
     definition: 'extra order',
-    formal_definition: 'extra order'
-  }
-]
+    formal_definition: 'extra order',
+  },
+];
 
-const sweetness = [
+const SWEETNESS = [
   {
     label: '',
     definition: 'normal',
-    formal_definition: '100% sugar level'
+    formal_definition: '100% sugar level',
   },
   {
     label: 'kosong',
     definition: 'no sugar',
-    formal_definition: '0% sugar level'
+    formal_definition: '0% sugar level',
   },
   {
     label: 'siew dai',
     definition: 'less sweet',
-    formal_definition: '50% sugar level'
+    formal_definition: '50% sugar level',
   },
   {
     label: 'siew siew dai',
     definition: 'less less sweet',
-    formal_definition: '25% sugar level'
+    formal_definition: '25% sugar level',
   },
   {
     label: 'ga dai',
     definition: 'extra sweet',
-    formal_definition: '150% sugar level'
-  }
-]
+    formal_definition: '150% sugar level',
+  },
+];
 
 export default {
-  BASE: drinks, 
-  MILK: taste,
-  SWEETNESS: sweetness,
-  TEMPERATURE: temp,
-  TOGO: togo, 
-  DILUTION: dilution,
-  ORDER: numOrders
-}
+  BASE,
+  MILK,
+  SWEETNESS,
+  TEMPERATURE,
+  TOGO,
+  DILUTION,
+  ORDER,
+};
