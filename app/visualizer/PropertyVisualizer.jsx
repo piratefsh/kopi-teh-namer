@@ -4,6 +4,7 @@ import backgroundUrl from 'images/liquid-bg-nopadding.svg';
 import PropertyConstants from './PropertyConstants';
 import Liquid from './Liquid';
 import Temperature from './Temperature';
+import TakeAway from './TakeAway';
 import NumOrder from './NumOrder';
 
 class PropertyVisualizer extends React.Component {
@@ -46,23 +47,29 @@ class PropertyVisualizer extends React.Component {
     return this.props.label === 'order';
   }
 
+  isTogo() {
+    return this.props.label === 'togo';
+  }
+
   getVisualType() {
     if (this.isLiquid()) {
       return (<Liquid
         color={this.getColor()}
         size={this.getSize()}
       />);
-    }
-    else if (this.isTemperature()){
+    } else if (this.isTemperature()) {
       const temp = PropertyConstants.TEMPS[this.props.selected];
       return (<Temperature
-          temperature={temp}
-        />)
-    }
-    else if (this.isNumOrder()){
+        temperature={temp}
+      />);
+    } else if (this.isNumOrder()) {
       return (<NumOrder
-          numOrder={PropertyConstants.ORDER[this.props.selected]}
-        />)
+        numOrder={PropertyConstants.ORDER[this.props.selected]}
+      />);
+    } else if (this.isTogo()) {
+      return (<TakeAway
+        takeaway={PropertyConstants.TOGO[this.props.selected]}
+      />);
     }
     return null;
   }
@@ -87,4 +94,4 @@ PropertyVisualizer.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string.isRequired,
   selected: PropTypes.any.isRequired,
-}
+};

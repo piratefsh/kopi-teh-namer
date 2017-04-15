@@ -87,12 +87,14 @@ const SIZES = {
 
 const TEMPS = ['hot', 'cold'];
 const ORDER = [1, 2];
+const TOGO = [false, true];
 
 const PropertyConstants = {
   COLORS,
   SIZES,
   TEMPS,
-  ORDER
+  ORDER,
+  TOGO
 };
 
 export default PropertyConstants;
