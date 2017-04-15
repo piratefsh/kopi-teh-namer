@@ -2,6 +2,7 @@
 
 $space: 8px;
 $white: #ffffff;
+$grey: #999999;
 $skyblue: #b6e8d9;
 $header-height: 120px;
 body {
@@ -44,36 +45,43 @@ form {
   display: flex;
   flex-flow: row wrap;
 
-  @media(max-width: 480px){
+  @media(max-width: 480px) {
     display: block;
   }
+}
 
-  fieldset {
-    border: 0;
-    box-sizing: border-box;
-    margin: 0;
-    margin-top: $space * 3;
-    padding: 0;
-    padding-right: $space * 2;
-    width: 50%;
-    .input-group:nth-child(2) {
-      border-width: 50%;
-      padding-top: $space;
-      &:before{
-        content: '';
-        display: block;
-        position: relative;
-        top: -$space;
-        width: 80%;
-        height: 1px;
-        background-color: rgba($skyblue, 0.6);
-      }
-    }
-    
-    @media(max-width: 480px){
-      width: 100%;
+fieldset {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  margin-top: $space * 3;
+  padding: 0;
+  padding-right: $space * 2;
+  width: 50%;
+
+  .input-group:nth-child(2) {
+    border-width: 50%;
+    padding-top: $space;
+
+    &:before{
+      content: '';
+      display: block;
+      position: relative;
+      top: -$space;
+      width: 80%;
+      height: 1px;
+      background-color: rgba($skyblue, 0.6);
     }
   }
+  
+  @media(max-width: 480px){
+    width: 100%;
+  }
+}
+
+.fieldset-sm{
+  font-size: 0.8em;
+  color: $grey
 }
 
 label, 
@@ -145,4 +153,8 @@ input[type=radio] + label {
       background-color: #222;
     }
   }
+}
+
+.right{
+  float: right;
 }
