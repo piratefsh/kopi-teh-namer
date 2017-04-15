@@ -8,6 +8,10 @@ function DrinkDisplayPart(props) {
   return (<div className="part">
     <div>{props.part.label || <div className="default"><br /></div>}</div>
     <div>{props.part.definition || <br />}</div>
+
+    <div className="part-type">
+      <span>{props.part.type}</span>
+    </div>
   </div>);
 }
 
@@ -15,7 +19,7 @@ class DrinkDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hideDefaults: false
+      hideDefaults: true
     }
 
     this.onShowDefaultChange = this.onShowDefaultChange.bind(this);
