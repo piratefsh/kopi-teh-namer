@@ -134,6 +134,7 @@ input[type=radio] + label {
     }
 
     &:nth-child(2) {
+      user-select: none;
       font-size: 0.8em;
       opacity: 0.7;
       text-transform: italic;
@@ -168,7 +169,7 @@ input[type=radio] + label {
     text-transform: uppercase;
     transform: translatex(-50%);
     z-index: 2;
-    
+
     > span {
       background-color: $white;
       border-radius: $space/2;
