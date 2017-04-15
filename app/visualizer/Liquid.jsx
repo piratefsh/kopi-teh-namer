@@ -16,8 +16,12 @@ class Liquid extends React.Component {
     };
   }
 
+  getTopWidth(height=0, maxHeight=30){
+    const n = 24 + 6 * (height/maxHeight)
+    return `${n}px`
+  }
   makeStyle(props){
-    if(!props.color || !props.size){
+    if(!props.color){
       return {
         top: {},
         middle: {},
@@ -30,7 +34,7 @@ class Liquid extends React.Component {
       top: {
         position: 'relative',
         top: '3px',
-        width: '30px',
+        width: this.getTopWidth(props.size),
         height: '6px',
         borderRadius: '50%',
         backgroundColor: Utils.hslCSS(props.color, 10),
@@ -38,7 +42,7 @@ class Liquid extends React.Component {
       middle: {
         backgroundColor: color,
         width: '30px',
-        height: `${props.size}px`,
+        height: `${props.size || 0}px`,
       },
       bottom: {
         position: 'relative',
