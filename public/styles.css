@@ -465,6 +465,9 @@ body {
   padding: 0;
   color: #444;
   padding-top: 136px; }
+  @media (max-width: 480px) {
+    body {
+      padding-top: 196px; } }
 
 .container {
   margin: 0 auto;
