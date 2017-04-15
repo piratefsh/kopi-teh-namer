@@ -2,25 +2,28 @@ Array.prototype.clean = function clean () {
   return this.filter((e) => e && e.length > 0);
 };
 
-class Kopi {
+class Drink {
   constructor({ base, milk, dilution, temperature, sweetness, togo, order }) {
     this.parts = [base, milk, dilution, temperature, sweetness, togo, order];
   }
 
   toString() {
-    const name = this.parts.map((i) => i.label).clean().join(' ');
-    return name;
+    return this.parts.map((i) => i.label)
+      .clean()
+      .join(' ');
   }
 
   toFormalDefinition() {
-    const formalDef = this.parts.map((i) => i.formal_definition).clean().join('\n  + ');
-    return formalDef;
+    return this.parts.map((i) => i.formal_definition)
+      .clean()
+      .join('\n  + ');
   }
 
   toCasualDefinition() {
-    const def = this.parts.map((i) => i.definition).clean().join(' ');
-    return def;
+    return this.parts.map((i) => i.definition)
+      .clean()
+      .join(' ');
   }
 }
 
-export default Kopi;
+export default Drink;
