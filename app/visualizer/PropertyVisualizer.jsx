@@ -36,7 +36,7 @@ class Liquid extends React.Component {
       },
       bottom: {
         position: 'relative',
-        bottom: '5px',
+        bottom: '6px',
         width: '24px',
         height: '10px',
         borderRadius: '50%',
@@ -80,16 +80,19 @@ class PropertyVisualizer extends React.Component {
     return colors[parseInt(this.props.selected, 10)];
   }
 
+  getSize() {
+    return PropertyConstants.SIZES[this.props.label][this.props.selected];
+  }
+
   isLiquid() {
     return ['base', 'milk', 'dilution', 'sugar'].indexOf(this.props.label) > -1;
   }
 
   getVisualType() {
     if (this.isLiquid()) {
-      console.log(this.props.label, this.getColor())
       return (<Liquid
         color={this.getColor()}
-        size={PropertyConstants.SIZES[this.props.label] || PropertyConstants.SIZES.default}
+        size={this.getSize()}
       />);
     }
     return null;
