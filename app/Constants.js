@@ -19,7 +19,7 @@ const MILK = [
   },
   {
     label: '',
-    definition: '',
+    definition: 'condensed milk',
     default: true,
     formal_definition: 'condensed milk',
 
@@ -44,7 +44,7 @@ const DILUTION = [
   },
   {
     label: '',
-    definition: '',
+    definition: 'normal',
     default: true,
     formal_definition: '10% water dilution',
   },

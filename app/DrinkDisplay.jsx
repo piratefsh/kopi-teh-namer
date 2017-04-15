@@ -1,12 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+function DrinkDisplayPart(props){
+  return (<div className="part">
+    <div>{props.part.label || <div className="default"><br/></div>}</div>
+    <div>{props.part.definition || <br/>}</div>
+  </div>)
+}
+
 function DrinkDisplay(props) {
+  console.log(props)
   return (
     <header>
       <div className="container">
-        <h1>{props.drink.toString()}</h1>
-        <p>{props.drink.toCasualDefinition()}</p>
+        <div>{
+          props.drink
+            .parts
+            .map((part)=>{
+              return <DrinkDisplayPart 
+                part={part}/>
+          })
+        }</div>
       </div>
     </header>
   );

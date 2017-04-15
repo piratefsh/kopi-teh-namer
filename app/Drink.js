@@ -7,8 +7,16 @@ class Drink {
     this.parts = [base, milk, dilution, temperature, sweetness, togo, order];
   }
 
+  labels() {
+    return this.parts.map((i) => i.label);
+  }
+
+  casualDef() {
+    return this.parts.map((i) => i.definition);
+  }
+
   toString() {
-    return this.parts.map((i) => i.label)
+    return this.labels()
       .clean()
       .join(' ');
   }
@@ -20,7 +28,7 @@ class Drink {
   }
 
   toCasualDefinition() {
-    return this.parts.map((i) => i.definition)
+    return this.casualDef()
       .clean()
       .join(' ');
   }
