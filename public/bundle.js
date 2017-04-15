@@ -22667,19 +22667,19 @@
 
 	var _VariationSelector2 = _interopRequireDefault(_VariationSelector);
 
-	var _Constants = __webpack_require__(242);
+	var _Constants = __webpack_require__(247);
 
 	var _Constants2 = _interopRequireDefault(_Constants);
 
-	var _Drink = __webpack_require__(243);
+	var _Drink = __webpack_require__(248);
 
 	var _Drink2 = _interopRequireDefault(_Drink);
 
-	var _DrinkDisplay = __webpack_require__(251);
+	var _DrinkDisplay = __webpack_require__(256);
 
 	var _DrinkDisplay2 = _interopRequireDefault(_DrinkDisplay);
 
-	var _Utils = __webpack_require__(252);
+	var _Utils = __webpack_require__(246);
 
 	var _Utils2 = _interopRequireDefault(_Utils);
 
@@ -23287,6 +23287,10 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
+	var _visualizerPropertyVisualizer = __webpack_require__(242);
+
+	var _visualizerPropertyVisualizer2 = _interopRequireDefault(_visualizerPropertyVisualizer);
+
 	var VariationSelector = (function (_React$Component) {
 	  _inherits(VariationSelector, _React$Component);
 
@@ -23352,6 +23356,7 @@
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'input-group label' },
+	          _react2['default'].createElement(_visualizerPropertyVisualizer2['default'], { label: this.props.label, selected: this.state.value }),
 	          _react2['default'].createElement(
 	            'span',
 	            { className: 'label uppercase' },
@@ -24228,6 +24233,386 @@
 
 /***/ },
 /* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _get = __webpack_require__(200)['default'];
+
+	var _inherits = __webpack_require__(214)['default'];
+
+	var _createClass = __webpack_require__(225)['default'];
+
+	var _classCallCheck = __webpack_require__(228)['default'];
+
+	var _interopRequireDefault = __webpack_require__(2)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _react = __webpack_require__(198);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(234);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _imagesLiquidBgNopaddingSvg = __webpack_require__(243);
+
+	var _imagesLiquidBgNopaddingSvg2 = _interopRequireDefault(_imagesLiquidBgNopaddingSvg);
+
+	var _PropertyConstants = __webpack_require__(244);
+
+	var _PropertyConstants2 = _interopRequireDefault(_PropertyConstants);
+
+	var _Liquid = __webpack_require__(245);
+
+	var _Liquid2 = _interopRequireDefault(_Liquid);
+
+	var PropertyVisualizer = (function (_React$Component) {
+	  _inherits(PropertyVisualizer, _React$Component);
+
+	  function PropertyVisualizer(props) {
+	    _classCallCheck(this, PropertyVisualizer);
+
+	    _get(Object.getPrototypeOf(PropertyVisualizer.prototype), 'constructor', this).call(this, props);
+	    this.state = {
+	      style: {
+	        width: '32px'
+	      },
+	      color: this.getColor(props.selected)
+	    };
+	  }
+
+	  _createClass(PropertyVisualizer, [{
+	    key: 'getColor',
+	    value: function getColor() {
+	      var colors = _PropertyConstants2['default'].COLORS[this.props.label];
+	      if (colors === undefined) {
+	        return null;
+	      }
+
+	      return colors[parseInt(this.props.selected, 10)];
+	    }
+	  }, {
+	    key: 'getSize',
+	    value: function getSize() {
+	      var sizes = _PropertyConstants2['default'].SIZES[this.props.label];
+	      if (sizes === undefined) {
+	        return null;
+	      }
+	      return sizes[this.props.selected];
+	    }
+	  }, {
+	    key: 'isLiquid',
+	    value: function isLiquid() {
+	      return ['base', 'milk', 'dilution', 'sweetness'].indexOf(this.props.label) > -1;
+	    }
+	  }, {
+	    key: 'getVisualType',
+	    value: function getVisualType() {
+	      if (this.isLiquid()) {
+	        return _react2['default'].createElement(_Liquid2['default'], {
+	          color: this.getColor(),
+	          size: this.getSize()
+	        });
+	      }
+	      return null;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'liquid-container' },
+	        this.getVisualType(),
+	        _react2['default'].createElement('img', {
+	          src: _imagesLiquidBgNopaddingSvg2['default'],
+	          style: this.state.style,
+	          className: this.props.className
+	        })
+	      );
+	    }
+	  }]);
+
+	  return PropertyVisualizer;
+	})(_react2['default'].Component);
+
+	exports['default'] = PropertyVisualizer;
+
+	PropertyVisualizer.propTypes = {
+	  className: _propTypes2['default'].string,
+	  label: _propTypes2['default'].string.isRequired,
+	  selected: _propTypes2['default'].any.isRequired
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "acefec5f16f4e11100a912b31bbbc59d.svg";
+
+/***/ },
+/* 244 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var COLORS = {
+	  base: [{
+	    h: 18,
+	    s: 69,
+	    l: 40
+	  }, {
+	    h: 30,
+	    s: 69,
+	    l: 45
+	  }],
+
+	  milk: [{
+	    h: 0,
+	    s: 0,
+	    l: 0,
+	    a: 0
+	  }, {
+	    h: 40,
+	    s: 40,
+	    l: 85
+	  }, {
+	    h: 10,
+	    s: 18,
+	    l: 98
+	  }],
+
+	  dilution: [{
+	    h: 241,
+	    s: 22,
+	    l: 82,
+	    a: 0
+	  }, {
+	    h: 241,
+	    s: 22,
+	    l: 82
+	  }, {
+	    h: 241,
+	    s: 22,
+	    l: 82
+	  }, {
+	    h: 241,
+	    s: 22,
+	    l: 82
+	  }],
+
+	  sweetness: [{
+	    h: 250,
+	    s: 50,
+	    l: 100,
+	    a: 0
+	  }, {
+	    h: 250,
+	    s: 50,
+	    l: 100
+	  }, {
+	    h: 250,
+	    s: 50,
+	    l: 100
+	  }, {
+	    h: 250,
+	    s: 50,
+	    l: 100
+	  }, {
+	    h: 250,
+	    s: 50,
+	    l: 100
+	  }]
+	};
+
+	var SIZES = {
+	  base: [30, 30],
+	  milk: [0, 10, 20],
+	  sweetness: [0, 5, 10, 15, 20],
+	  dilution: [0, 5, 10, 20]
+	};
+
+	var PropertyConstants = {
+	  COLORS: COLORS,
+	  SIZES: SIZES
+	};
+
+	exports["default"] = PropertyConstants;
+	module.exports = exports["default"];
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _get = __webpack_require__(200)['default'];
+
+	var _inherits = __webpack_require__(214)['default'];
+
+	var _createClass = __webpack_require__(225)['default'];
+
+	var _classCallCheck = __webpack_require__(228)['default'];
+
+	var _interopRequireDefault = __webpack_require__(2)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _react = __webpack_require__(198);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(234);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _Utils = __webpack_require__(246);
+
+	var _Utils2 = _interopRequireDefault(_Utils);
+
+	var Liquid = (function (_React$Component) {
+	  _inherits(Liquid, _React$Component);
+
+	  function Liquid(props) {
+	    _classCallCheck(this, Liquid);
+
+	    _get(Object.getPrototypeOf(Liquid.prototype), 'constructor', this).call(this, props);
+	    this.state = {
+	      style: this.makeStyle(props)
+	    };
+	  }
+
+	  _createClass(Liquid, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      this.state = {
+	        style: this.makeStyle(nextProps)
+	      };
+	    }
+	  }, {
+	    key: 'makeStyle',
+	    value: function makeStyle(props) {
+	      if (!props.color || !props.size) {
+	        return {
+	          top: {},
+	          middle: {},
+	          bottom: {}
+	        };
+	      }
+
+	      var color = _Utils2['default'].hslCSS(props.color);
+	      return {
+	        top: {
+	          position: 'relative',
+	          top: '3px',
+	          width: '30px',
+	          height: '6px',
+	          borderRadius: '50%',
+	          backgroundColor: _Utils2['default'].hslCSS(props.color, 10)
+	        },
+	        middle: {
+	          backgroundColor: color,
+	          width: '30px',
+	          height: props.size + 'px'
+	        },
+	        bottom: {
+	          position: 'relative',
+	          bottom: '6px',
+	          width: '24px',
+	          height: '10px',
+	          borderRadius: '50%',
+	          backgroundColor: color
+	        }
+	      };
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'liquid' },
+	        _react2['default'].createElement('span', { className: 'top', style: this.state.style.top }),
+	        _react2['default'].createElement('span', { className: 'middle', style: this.state.style.middle }),
+	        _react2['default'].createElement('span', { className: 'bottom', style: this.state.style.bottom })
+	      );
+	    }
+	  }]);
+
+	  return Liquid;
+	})(_react2['default'].Component);
+
+	exports['default'] = Liquid;
+	module.exports = exports['default'];
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _Object$keys = __webpack_require__(229)["default"];
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function getDefaultProps() {
+	  var thing = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	  var selection = {};
+	  _Object$keys(thing).forEach(function (key) {
+	    selection[key] = thing[key].reduce(function (acc, v, i) {
+	      return v["default"] ? i : acc;
+	    }, 0);
+	  });
+	  return selection;
+	}
+
+	function makeKopiArgs(ids, obj) {
+	  var keys = _Object$keys(ids);
+	  var args = {};
+	  keys.forEach(function (k) {
+	    args[k.toLowerCase()] = obj[k][ids[k]];
+	  });
+	  return args;
+	}
+
+	function hslCSS(_ref, darken, lighten) {
+	  var _ref$h = _ref.h;
+	  var h = _ref$h === undefined ? 0 : _ref$h;
+	  var _ref$s = _ref.s;
+	  var s = _ref$s === undefined ? 0 : _ref$s;
+	  var _ref$l = _ref.l;
+	  var l = _ref$l === undefined ? 0 : _ref$l;
+	  var _ref$a = _ref.a;
+	  var a = _ref$a === undefined ? 1 : _ref$a;
+
+	  if (darken) {
+	    l -= darken;
+	  }
+	  return "hsla(" + h + ", " + s + "%, " + l + "%, " + a + ")";
+	}
+
+	var Utils = {
+	  getDefaultProps: getDefaultProps,
+	  makeKopiArgs: makeKopiArgs,
+	  hslCSS: hslCSS
+	};
+
+	exports["default"] = Utils;
+	module.exports = exports["default"];
+
+/***/ },
+/* 247 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -24348,7 +24733,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 243 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24363,7 +24748,7 @@
 	  value: true
 	});
 
-	var _DrinkProperty = __webpack_require__(244);
+	var _DrinkProperty = __webpack_require__(249);
 
 	var _DrinkProperty2 = _interopRequireDefault(_DrinkProperty);
 
@@ -24428,14 +24813,14 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 244 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _classCallCheck = __webpack_require__(228)["default"];
 
-	var _Object$assign = __webpack_require__(245)["default"];
+	var _Object$assign = __webpack_require__(250)["default"];
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -24452,36 +24837,36 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 245 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(246), __esModule: true };
+	module.exports = { "default": __webpack_require__(251), __esModule: true };
 
 /***/ },
-/* 246 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(247);
+	__webpack_require__(252);
 	module.exports = __webpack_require__(212).Object.assign;
 
 /***/ },
-/* 247 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.3.1 Object.assign(target, source)
 	var $def = __webpack_require__(210);
 
-	$def($def.S + $def.F, 'Object', {assign: __webpack_require__(248)});
+	$def($def.S + $def.F, 'Object', {assign: __webpack_require__(253)});
 
 /***/ },
-/* 248 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var toObject = __webpack_require__(232)
 	  , IObject  = __webpack_require__(206)
-	  , enumKeys = __webpack_require__(249)
-	  , has      = __webpack_require__(250);
+	  , enumKeys = __webpack_require__(254)
+	  , has      = __webpack_require__(255);
 
 	// should work with symbols and should have deterministic property order (V8 bug)
 	module.exports = __webpack_require__(213)(function(){
@@ -24509,7 +24894,7 @@
 	} : Object.assign;
 
 /***/ },
-/* 249 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
@@ -24528,7 +24913,7 @@
 	};
 
 /***/ },
-/* 250 */
+/* 255 */
 /***/ function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -24537,7 +24922,7 @@
 	};
 
 /***/ },
-/* 251 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24677,46 +25062,6 @@
 
 	exports['default'] = DrinkDisplay;
 	module.exports = exports['default'];
-
-/***/ },
-/* 252 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _Object$keys = __webpack_require__(229)["default"];
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function getDefaultProps() {
-	  var thing = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-	  var selection = {};
-	  _Object$keys(thing).forEach(function (key) {
-	    selection[key] = thing[key].reduce(function (acc, v, i) {
-	      return v["default"] ? i : acc;
-	    }, 0);
-	  });
-	  return selection;
-	}
-
-	function makeKopiArgs(ids, obj) {
-	  var keys = _Object$keys(ids);
-	  var args = {};
-	  keys.forEach(function (k) {
-	    args[k.toLowerCase()] = obj[k][ids[k]];
-	  });
-	  return args;
-	}
-
-	var Utils = {
-	  getDefaultProps: getDefaultProps,
-	  makeKopiArgs: makeKopiArgs
-	};
-
-	exports["default"] = Utils;
-	module.exports = exports["default"];
 
 /***/ }
 /******/ ]);
