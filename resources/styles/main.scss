@@ -223,7 +223,9 @@ footer{
   right: 0;
   margin: 16px;
   margin-right: 32px;
-
+  label{
+    margin-left: $space/2;
+  }
   @media(max-width: 480px) {
     margin: 8px;
     margin-top: $space;

@@ -684,6 +684,8 @@ footer {
   right: 0;
   margin: 16px;
   margin-right: 32px; }
+  .hide-defaults label {
+    margin-left: 4px; }
   @media (max-width: 480px) {
     .hide-defaults {
       margin: 8px;
