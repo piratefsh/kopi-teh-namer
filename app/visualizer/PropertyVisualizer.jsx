@@ -12,7 +12,7 @@ class PropertyVisualizer extends React.Component {
     super(props);
     this.state = {
       style: {
-        width: '32px',
+        width: '34px',
       },
       color: this.getColor(props.selected),
     };

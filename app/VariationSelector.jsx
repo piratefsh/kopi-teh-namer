@@ -47,7 +47,7 @@ class VariationSelector extends React.Component {
         <span className="label uppercase">{this.props.label}</span>
       </div>
 
-      <div className="input-group">
+      <div className="input-group input-group-hoverable">
         {this.makeRadios()}
       </div>
     </fieldset>);

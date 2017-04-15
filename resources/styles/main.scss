@@ -107,20 +107,25 @@ input[type=radio] + label {
   padding-right: $space*2;
   vertical-align: middle;
 
+  &.input-group-hoverable {
+    > div {
+      border-radius: $space / 2;
+      padding: $space / 2;
+      transition: all 0.3s;
+
+      &:hover,
+      &:focus {
+       background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
   * {
     vertical-align: middle;
   }
 
   > div {
-    border-radius: $space / 2;
     margin-bottom: $space / 2;
-    padding: $space / 2;
-    transition: all 0.3s;
-
-    &:hover,
-    &:focus {
-     background-color: rgba(255, 255, 255, 0.1);
-    }
   }
 
   .label {
