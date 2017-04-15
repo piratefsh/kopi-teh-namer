@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function DrinkDisplayPart(props) {
-  if(props.hideDefault && !props.part.label){
+  if (props.hideDefault && !props.part.label) {
     return null;
   }
   return (<div className="part">
@@ -10,7 +10,7 @@ function DrinkDisplayPart(props) {
     <div>{props.part.definition || <br />}</div>
 
     <div className="part-type">
-      <span>{props.part.type}</span>
+    <span><strong>{props.part.type}</strong></span>
     </div>
   </div>);
 }
@@ -19,23 +19,23 @@ class DrinkDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hideDefaults: true
-    }
+      hideDefaults: true,
+    };
 
     this.onShowDefaultChange = this.onShowDefaultChange.bind(this);
   }
 
-  onShowDefaultChange(e){
+  onShowDefaultChange(e) {
     this.setState({
       hideDefaults: e.target.checked,
-    })
+    });
   }
 
-  render(){
-  return (
-    <header>
-      <div className="container">
-        <div>{
+  render() {
+    return (
+      <header>
+        <div className="container">
+          <div>{
           this.props.drink
             .parts
             .map((part, i) => (<DrinkDisplayPart
@@ -45,16 +45,17 @@ class DrinkDisplay extends React.Component {
             />))
         }</div>
 
-        <span className='fieldset-sm right'>
-          <input type='checkbox' 
-            checked={this.state.hideDefaults ? "checked": ''}
-            onChange={this.onShowDefaultChange}
+          <span className="fieldset-sm right">
+            <input
+              type="checkbox"
+              checked={this.state.hideDefaults ? 'checked' : ''}
+              onChange={this.onShowDefaultChange}
             /><label>Hide defaults</label>
-        </span>
-      </div>
-    </header>
-  );
-}
+          </span>
+        </div>
+      </header>
+    );
+  }
 }
 
 DrinkDisplay.propTypes = {
@@ -63,6 +64,7 @@ DrinkDisplay.propTypes = {
 
 DrinkDisplayPart.propTypes = {
   part: PropTypes.object.isRequired,
+  hideDefault: PropTypes.bool.isRequired,
 };
 
 export default DrinkDisplay;
