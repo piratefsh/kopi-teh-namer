@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="490px" viewBox="0 0 400 490" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Drink_Hot_HavingHere</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M335.504828,197.237253 C327.446239,282.389668 319.387339,367.545382 311.328595,452.699446 C311.328595,463.841297 259.758764,489.711912 199.790133,489.504819 C138.89992,489.294544 88.2516718,463.841297 88.2516718,452.699446 C88.2516718,452.699446 73.9034623,301.086699 64.0000143,196.440265 C63.9281269,195.680655 335.6335,195.877618 335.504828,197.237253 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="271.504873" height="293.506055" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <ellipse id="path-3" cx="200" cy="197" rx="136" ry="25"></ellipse>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="272" height="50" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Assets-For-Sher-Minn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Drink_Hot_HavingHere" stroke="#A9DBD6" fill="#85C0BA">
+            <path d="M322.812818,249.594862 C322.672313,255.210128 321.29629,280.141573 320.690818,286.961862 C335.147818,280.850862 348.229818,280.436862 355.138818,285.982862 C361.888818,291.406862 363.870818,303.498862 360.575818,319.157862 C357.214818,335.121862 339.241818,351.206862 310.220818,356.096862 C307.533818,368.426862 304.425818,380.474862 300.941818,392.218862 C349.049818,389.246862 386.982818,362.999862 394.699818,326.340862 C403.049818,286.668862 387.181818,266.996862 376.981818,258.797862 C362.953818,247.523862 343.825818,244.441862 322.812818,249.594862 Z" id="Cup_HavingHere_Handle" stroke-width="5" transform="translate(348.992694, 319.697031) rotate(-4.000000) translate(-348.992694, -319.697031) "></path>
+            <use id="Cup_HavingHere_Body" mask="url(#mask-2)" stroke-width="10" xlink:href="#path-1"></use>
+            <use id="Cup_HavingHere_Mouth" mask="url(#mask-4)" stroke-width="10" xlink:href="#path-3"></use>
+        </g>
+    </g>
+</svg>
