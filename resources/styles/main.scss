@@ -55,7 +55,7 @@ fieldset {
   margin: 0;
   margin-top: $space * 3;
   padding: 0;
-  padding-right: $space * 2;
+  padding-right: $space * 3 - $space / 2;
   width: 50%;
 
   .input-group:nth-child(2) {
@@ -112,7 +112,15 @@ input[type=radio] + label {
   }
 
   > div {
-    margin-bottom: 8px;
+    border-radius: $space / 2;
+    margin-bottom: $space / 2;
+    padding: $space / 2;
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+     background-color: rgba(255, 255, 255, 0.1);
+    }
   }
 
   .label {
