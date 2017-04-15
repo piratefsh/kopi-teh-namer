@@ -24462,7 +24462,6 @@
 	}
 
 	function DrinkDisplay(props) {
-	  console.log(props);
 	  return _react2['default'].createElement(
 	    'header',
 	    null,
@@ -24472,9 +24471,11 @@
 	      _react2['default'].createElement(
 	        'div',
 	        null,
-	        props.drink.parts.map(function (part) {
+	        props.drink.parts.map(function (part, i) {
 	          return _react2['default'].createElement(DrinkDisplayPart, {
-	            part: part });
+	            key: i,
+	            part: part
+	          });
 	        })
 	      )
 	    )
@@ -24483,6 +24484,10 @@
 
 	DrinkDisplay.propTypes = {
 	  drink: _propTypes2['default'].object.isRequired
+	};
+
+	DrinkDisplayPart.propTypes = {
+	  part: _propTypes2['default'].object.isRequired
 	};
 
 	exports['default'] = DrinkDisplay;
