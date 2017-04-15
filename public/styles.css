@@ -481,13 +481,16 @@ template {
   .liquid span {
     display: block;
     margin: 0 auto;
-    transition: height 0.3s, background-color 0.3s; }
+    transition: all 0.6s; }
     .liquid span.top {
-      z-index: 3; }
+      z-index: 3;
+      transition: background-color 0.6s 0s, height 0.3s; }
     .liquid span.middle {
-      z-index: 2; }
+      z-index: 2;
+      transition: background-color 0.6s 0.2s, height 0.2s; }
     .liquid span.bottom {
-      z-index: 1; }
+      z-index: 1;
+      transition: background-color 0.6s 0.2s, height 0.3s; }
   .liquid:before, .liquid:after {
     position: absolute;
     content: '';

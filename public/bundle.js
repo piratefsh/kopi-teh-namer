@@ -24500,9 +24500,18 @@
 	      };
 	    }
 	  }, {
+	    key: 'getTopWidth',
+	    value: function getTopWidth() {
+	      var height = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+	      var maxHeight = arguments.length <= 1 || arguments[1] === undefined ? 30 : arguments[1];
+
+	      var n = 24 + 6 * (height / maxHeight);
+	      return n + 'px';
+	    }
+	  }, {
 	    key: 'makeStyle',
 	    value: function makeStyle(props) {
-	      if (!props.color || !props.size) {
+	      if (!props.color) {
 	        return {
 	          top: {},
 	          middle: {},
@@ -24515,7 +24524,7 @@
 	        top: {
 	          position: 'relative',
 	          top: '3px',
-	          width: '30px',
+	          width: this.getTopWidth(props.size),
 	          height: '6px',
 	          borderRadius: '50%',
 	          backgroundColor: _Utils2['default'].hslCSS(props.color, 10)
@@ -24523,7 +24532,7 @@
 	        middle: {
 	          backgroundColor: color,
 	          width: '30px',
-	          height: props.size + 'px'
+	          height: (props.size || 0) + 'px'
 	        },
 	        bottom: {
 	          position: 'relative',
