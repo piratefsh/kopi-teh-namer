@@ -464,7 +464,10 @@ body {
   margin: 0;
   padding: 0;
   color: #444;
-  padding-top: 176px; }
+  padding-top: 136px; }
+  @media (max-width: 480px) {
+    body {
+      padding-top: 0; } }
 
 .container {
   margin: 0 auto;
@@ -473,13 +476,18 @@ body {
 
 header {
   box-sizing: border-box;
-  height: 160px;
+  height: 120px;
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #b6e8d9;
   box-shadow: 0 0 3px #42c39c;
-  padding: 16px 0; }
+  padding: 24px 0;
+  z-index: 2; }
+  @media (max-width: 480px) {
+    header {
+      position: static;
+      height: auto; } }
 
 form {
   display: flex;
@@ -533,3 +541,30 @@ input[type=radio] + label {
     margin-bottom: 8px; }
   .input-group .label {
     font-weight: bold; }
+
+.part {
+  display: inline-block;
+  margin-right: 8px; }
+  .part > div:first-child {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px dotted #1a5241; }
+  .part > div:nth-child(2) {
+    opacity: 0.7;
+    font-size: 0.8em;
+    text-transform: italic; }
+  .part .default {
+    position: relative; }
+    .part .default:before {
+      opacity: 1;
+      margin-top: 8px;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0%;
+      width: 100%;
+      height: 20px;
+      height: 70%;
+      background-color: #222; }

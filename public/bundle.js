@@ -24251,7 +24251,7 @@
 	  formal_definition: 'no condensed or evaporated milk'
 	}, {
 	  label: '',
-	  definition: '',
+	  definition: 'condensed milk',
 	  'default': true,
 	  formal_definition: 'condensed milk'
 
@@ -24271,7 +24271,7 @@
 	  formal_definition: '5% water dilution'
 	}, {
 	  label: '',
-	  definition: '',
+	  definition: 'normal',
 	  'default': true,
 	  formal_definition: '10% water dilution'
 	}, {
@@ -24366,8 +24366,8 @@
 	  });
 	};
 
-	var Kopi = (function () {
-	  function Kopi(_ref) {
+	var Drink = (function () {
+	  function Drink(_ref) {
 	    var base = _ref.base;
 	    var milk = _ref.milk;
 	    var dilution = _ref.dilution;
@@ -24376,41 +24376,48 @@
 	    var togo = _ref.togo;
 	    var order = _ref.order;
 
-	    _classCallCheck(this, Kopi);
+	    _classCallCheck(this, Drink);
 
 	    this.parts = [base, milk, dilution, temperature, sweetness, togo, order];
 	  }
 
-	  _createClass(Kopi, [{
+	  _createClass(Drink, [{
+	    key: 'labels',
+	    value: function labels() {
+	      return this.parts.map(function (i) {
+	        return i.label;
+	      });
+	    }
+	  }, {
+	    key: 'casualDef',
+	    value: function casualDef() {
+	      return this.parts.map(function (i) {
+	        return i.definition;
+	      });
+	    }
+	  }, {
 	    key: 'toString',
 	    value: function toString() {
-	      var name = this.parts.map(function (i) {
-	        return i.label;
-	      }).clean().join(' ');
-	      return name;
+	      return this.labels().clean().join(' ');
 	    }
 	  }, {
 	    key: 'toFormalDefinition',
 	    value: function toFormalDefinition() {
-	      var formalDef = this.parts.map(function (i) {
+	      return this.parts.map(function (i) {
 	        return i.formal_definition;
 	      }).clean().join('\n  + ');
-	      return formalDef;
 	    }
 	  }, {
 	    key: 'toCasualDefinition',
 	    value: function toCasualDefinition() {
-	      var def = this.parts.map(function (i) {
-	        return i.definition;
-	      }).clean().join(' ');
-	      return def;
+	      return this.casualDef().clean().join(' ');
 	    }
 	  }]);
 
-	  return Kopi;
+	  return Drink;
 	})();
 
-	exports['default'] = Kopi;
+	exports['default'] = Drink;
 	module.exports = exports['default'];
 
 /***/ },
@@ -24433,7 +24440,29 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
+	function DrinkDisplayPart(props) {
+	  return _react2['default'].createElement(
+	    'div',
+	    { className: 'part' },
+	    _react2['default'].createElement(
+	      'div',
+	      null,
+	      props.part.label || _react2['default'].createElement(
+	        'div',
+	        { className: 'default' },
+	        _react2['default'].createElement('br', null)
+	      )
+	    ),
+	    _react2['default'].createElement(
+	      'div',
+	      null,
+	      props.part.definition || _react2['default'].createElement('br', null)
+	    )
+	  );
+	}
+
 	function DrinkDisplay(props) {
+	  console.log(props);
 	  return _react2['default'].createElement(
 	    'header',
 	    null,
@@ -24441,14 +24470,12 @@
 	      'div',
 	      { className: 'container' },
 	      _react2['default'].createElement(
-	        'h1',
+	        'div',
 	        null,
-	        props.drink.toString()
-	      ),
-	      _react2['default'].createElement(
-	        'p',
-	        null,
-	        props.drink.toCasualDefinition()
+	        props.drink.parts.map(function (part) {
+	          return _react2['default'].createElement(DrinkDisplayPart, {
+	            part: part });
+	        })
 	      )
 	    )
 	  );
