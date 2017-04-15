@@ -24646,7 +24646,7 @@
 	          ),
 	          _react2['default'].createElement(
 	            'span',
-	            { className: 'fieldset-sm right' },
+	            { className: 'fieldset-sm hide-defaults' },
 	            _react2['default'].createElement('input', {
 	              type: 'checkbox',
 	              checked: this.state.hideDefaults ? 'checked' : '',

@@ -612,6 +612,17 @@ input[type=radio] + label {
     .part:hover .part-type, .part:focus .part-type {
       display: block; }
 
+.hide-defaults {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 16px;
+  margin-right: 32px; }
+  @media (max-width: 480px) {
+    .hide-defaults {
+      margin: 8px;
+      margin-top: 8px; } }
+
 .right {
   float: right; }
 
