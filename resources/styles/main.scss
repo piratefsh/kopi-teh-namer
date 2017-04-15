@@ -206,6 +206,19 @@ input[type=radio] + label {
 
 }
 
+.hide-defaults {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 16px;
+  margin-right: 32px;
+
+  @media(max-width: 480px) {
+    margin: 8px;
+    margin-top: $space;
+  }
+}
+
 .right {
   float: right;
 }

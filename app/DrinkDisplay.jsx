@@ -45,7 +45,7 @@ class DrinkDisplay extends React.Component {
             />))
         }</div>
 
-          <span className="fieldset-sm right">
+          <span className="fieldset-sm hide-defaults">
             <input
               type="checkbox"
               checked={this.state.hideDefaults ? 'checked' : ''}
