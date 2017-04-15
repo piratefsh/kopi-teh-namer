@@ -43,7 +43,7 @@ class VariationSelector extends React.Component {
   render() {
     return (<fieldset className="form-group">
       <div className="input-group label">
-        <PropertyVisualizer name={this.props.label} selected={this.state.value}/>
+        <PropertyVisualizer label={this.props.label} selected={this.state.value}/>
         <span className="label uppercase">{this.props.label}</span>
       </div>
 

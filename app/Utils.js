@@ -15,11 +15,11 @@ function makeKopiArgs(ids, obj){
   return args;
 }
 
-function hslCSS({h, s, l}, darken, lighten) {
+function hslCSS({h, s, l, a=1}, darken, lighten) {
   if(darken) {
     l -= darken;
   }
-  return `hsl(${h}, ${s}%, ${l}%)`;
+  return `hsla(${h}, ${s}%, ${l}%, ${a})`;
 }
 
 const Utils = {

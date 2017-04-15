@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import backgroundUrl from 'images/liquid-bg-nopadding.svg';
 import Utils from 'Utils';
 import PropertyConstants from './PropertyConstants';
@@ -7,31 +8,43 @@ class Liquid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: {
-        top: {
-          position: 'relative',
-          top: '3px',
-          width: '30px',
-          height: '6px',
-          borderRadius: '50%',
-          backgroundColor: Utils.hslCSS(props.color, 10),
-        },
-        middle: {
-          backgroundColor: Utils.hslCSS(props.color),
-          width: '30px',
-          height: `${props.size}`,
-        },
-        bottom: {
-          position: 'relative',
-          bottom: '5px',
-          width: '24px',
-          height: '10px',
-          borderRadius: '50%',
-          backgroundColor: Utils.hslCSS(props.color),
-        },
-      },
+      style: this.makeStyle(props)
     };
   }
+
+  componentWillReceiveProps(nextProps){
+    this.state = {
+      style: this.makeStyle(nextProps),
+    };
+  }
+
+  makeStyle(props){
+    const color = Utils.hslCSS(props.color);
+    return {
+      top: {
+        position: 'relative',
+        top: '3px',
+        width: '30px',
+        height: '6px',
+        borderRadius: '50%',
+        backgroundColor: Utils.hslCSS(props.color, 10),
+      },
+      middle: {
+        backgroundColor: color,
+        width: '30px',
+        height: `${props.size}`,
+      },
+      bottom: {
+        position: 'relative',
+        bottom: '5px',
+        width: '24px',
+        height: '10px',
+        borderRadius: '50%',
+        backgroundColor: color,
+      },
+    }
+  }
+
   render() {
     return (<div className="liquid">
       <span className="top" style={this.state.style.top} />
@@ -48,27 +61,44 @@ class PropertyVisualizer extends React.Component {
       style: {
         width: '32px',
       },
+      color: this.getColor(props.selected),
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // console.log(this.props, prevProps)
+  componentWillReceiveProps(nextProps, nextState) {
+    if (this.props.selected != nextProps.selected) {
+      console.log(this.props.selected, nextProps.selected);
+    }
   }
 
-  render() {
-    const col = PropertyConstants.COLORS[this.props.name];
-
-    if (col === undefined) {
+  getColor() {
+    const colors = PropertyConstants.COLORS[this.props.label];
+    if (colors === undefined) {
       return null;
     }
 
-    const color = col[this.props.selected];
+    return colors[parseInt(this.props.selected, 10)];
+  }
+
+  isLiquid() {
+    return ['base', 'milk', 'dilution', 'sugar'].indexOf(this.props.label) > -1;
+  }
+
+  getVisualType() {
+    if (this.isLiquid()) {
+      console.log(this.props.label, this.getColor())
+      return (<Liquid
+        color={this.getColor()}
+        size={PropertyConstants.SIZES[this.props.label] || PropertyConstants.SIZES.default}
+      />);
+    }
+    return null;
+  }
+
+  render() {
     return (
       <div className="liquid-container">
-        <Liquid
-          color={color}
-          size={PropertyConstants.SIZES[this.props.name] || PropertyConstants.SIZES.default}
-        />
+        {this.getVisualType()}
         <img
           src={backgroundUrl}
           style={this.state.style}
@@ -80,3 +110,9 @@ class PropertyVisualizer extends React.Component {
 }
 
 export default PropertyVisualizer;
+
+PropertyVisualizer.propTypes = {
+  className: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  selected: PropTypes.any.isRequired,
+}
