@@ -1,4 +1,5 @@
 import iceUrl from 'images/Liquid_Temperature_Iced.svg';
+import steamUrl from 'images/hot-steam.svg';
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -16,11 +17,11 @@ class Temperature extends React.Component {
     console.log(props.temperature)
     if(props.temperature == 'hot'){
       return {
-        backgroundImage: `url(${iceUrl})`,
+        backgroundImage: `url(${steamUrl})`,
         width: '30px',
         height: '15px',
         display: 'block',
-        marginTop: '10px',
+        marginTop: '-16px',
         backgroundSize: 'contain'
       }
     }
@@ -30,8 +31,8 @@ class Temperature extends React.Component {
         backgroundImage: `url(${iceUrl})`,
         width: '30px',
         height: '15px',
+        marginTop: '6px',
         display: 'block',
-        marginTop: '10px',
         backgroundSize: 'contain'
       }
     }
