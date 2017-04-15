@@ -11,14 +11,14 @@ body {
   padding-top: $header-height + 16px;
 
   @media(max-width: 480px) {
-    padding-top: $header-height * 1.5 + 16px;
+    padding-top: $header-height-sm + 16px;
   }
 }
 
 .container {
   margin: 0 auto;
   max-width: 600px;
-  padding: 0 $space;
+  padding: 0 $space*2;
 }
 
 header {
@@ -33,7 +33,9 @@ header {
   z-index: 9;
 
   @media(max-width: 480px) {
-    height: $header-height * 1.5;;
+    padding: $space*2 0;
+
+    height: $header-height-sm;
   }
 
 }
@@ -125,6 +127,7 @@ input[type=radio] + label {
   padding: $space / 2;
   position: relative;
 
+
   > div {
     &:first-child{
       border-bottom: 1px dotted darken($secondary-color, 60%);
@@ -132,6 +135,9 @@ input[type=radio] + label {
       margin-bottom: $space / 2;
       padding-bottom: $space / 2;
       text-align: center;
+      @media(max-width: 480px) {
+        font-size: 1.4em
+      }
     }
 
     &:nth-child(2) {
