@@ -106,7 +106,11 @@ input[type=radio] + label {
 .input-group {
   box-sizing: border-box;
   padding-right: $space*2;
-  vertical-align: top;
+  vertical-align: middle;
+
+  * {
+    vertical-align: middle;
+  }
 
   > div {
     margin-bottom: 8px;

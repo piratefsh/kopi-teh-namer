@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DrinkVisualizer from './visualizer/DrinkVisualizer';
 
 class VariationSelector extends React.Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class VariationSelector extends React.Component {
   render() {
     return (<fieldset className="form-group">
       <div className="input-group label">
+        <DrinkVisualizer/>
         <span className="label uppercase">{this.props.label}</span>
       </div>
 
