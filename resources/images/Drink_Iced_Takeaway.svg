@@ -4,40 +4,34 @@
     <title>Drink_Iced_Takeaway</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <path d="M293.854341,110.726797 L285.670383,197.203954 C277.611638,282.358018 269.552894,367.512083 261.49415,452.666147 C261.49415,463.807998 209.924318,489.678613 149.955688,489.47152 C89.0654753,489.261245 38.4172267,463.807998 38.4172267,452.666147 C38.4172267,452.666147 24.0707653,301.071871 14.1655692,196.406966 C11.4438178,167.647125 8.72206632,138.887285 6.00031488,110.127445 C5.652106,106.448038 294.221457,106.847606 293.854341,110.726797 Z" id="path-1"></path>
+        <path d="M343.854341,110.726797 L335.670383,197.203954 C327.611638,282.358018 319.552894,367.512083 311.49415,452.666147 C311.49415,463.807998 259.924318,489.678613 199.955688,489.47152 C139.065475,489.261245 88.4172267,463.807998 88.4172267,452.666147 C88.4172267,452.666147 74.0707653,301.071871 64.1655692,196.406966 C61.4438178,167.647125 58.7220663,138.887285 56.0003149,110.127445 C55.652106,106.448038 344.221457,106.847606 343.854341,110.726797 Z" id="path-1"></path>
         <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="287.854691" height="381.892465" fill="white">
             <use xlink:href="#path-1"></use>
         </mask>
-        <ellipse id="path-3" cx="150" cy="111" rx="150" ry="25"></ellipse>
+        <ellipse id="path-3" cx="200" cy="111" rx="150" ry="25"></ellipse>
         <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="300" height="50" fill="white">
             <use xlink:href="#path-3"></use>
         </mask>
-        <polyline id="path-5" points="0 111 0 83 300 83 300 111"></polyline>
+        <polyline id="path-5" points="50 111 50 83 350 83 350 111"></polyline>
         <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="300" height="28" fill="white">
             <use xlink:href="#path-5"></use>
         </mask>
-        <ellipse id="path-7" cx="150" cy="83" rx="150" ry="25"></ellipse>
+        <ellipse id="path-7" cx="200" cy="83" rx="150" ry="25"></ellipse>
         <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="300" height="50" fill="white">
             <use xlink:href="#path-7"></use>
         </mask>
-        <rect id="path-9" x="141" y="0" width="18" height="450"></rect>
+        <rect id="path-9" x="191" y="0" width="18" height="450"></rect>
         <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18" height="450" fill="white">
             <use xlink:href="#path-9"></use>
         </mask>
     </defs>
     <g id="Assets-For-Sher-Minn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Drink_Iced_Takeaway">
-            <g id="Group" transform="translate(50.000000, 0.000000)">
-                <g id="Liquid_Container" transform="translate(20.000000, 93.580292)">
-                    <path d="M260.169953,25 C260.169953,25 230.169953,342 230.169953,342 C230.169953,351.989246 183.934931,375.18359 130.169953,374.997921 C75.5787273,374.809399 30.1699527,351.989246 30.1699527,342 C30.1699527,342 0.169952689,25 0.169952689,25 L260.169953,25 Z" id="Liquid_Container_Body"></path>
-                    <ellipse id="Liquid_Container_Surface" cx="130.169953" cy="25" rx="128.915024" ry="25"></ellipse>
-                </g>
-                <use id="Cup_Takeaway_Body" stroke="#A9DBD6" mask="url(#mask-2)" stroke-width="10" fill="#85C0BA" xlink:href="#path-1"></use>
-                <use id="Cup_Takeaway_Mouth_Base" stroke="#A9DBD6" mask="url(#mask-4)" stroke-width="10" fill="#85C0BA" xlink:href="#path-3"></use>
-                <use id="Cup_Takeaway_Mouth_Body" stroke="#A9DBD6" mask="url(#mask-6)" stroke-width="10" fill="#85C0BA" xlink:href="#path-5"></use>
-                <use id="Cup_Takeaway_Mouth_Surface" stroke="#A9DBD6" mask="url(#mask-8)" stroke-width="10" fill="#85C0BA" xlink:href="#path-7"></use>
-                <use id="Straw" stroke="#B6E6D9" mask="url(#mask-10)" stroke-width="2" fill-opacity="0.5" fill="#FFFFFF" xlink:href="#path-9"></use>
-            </g>
+            <use id="Cup_Takeaway_Body" stroke="#A9DBD6" mask="url(#mask-2)" stroke-width="10" fill="#85C0BA" xlink:href="#path-1"></use>
+            <use id="Cup_Takeaway_Mouth_Base" stroke="#A9DBD6" mask="url(#mask-4)" stroke-width="10" fill="#85C0BA" xlink:href="#path-3"></use>
+            <use id="Cup_Takeaway_Mouth_Body" stroke="#A9DBD6" mask="url(#mask-6)" stroke-width="10" fill="#85C0BA" xlink:href="#path-5"></use>
+            <use id="Cup_Takeaway_Mouth_Surface" stroke="#A9DBD6" mask="url(#mask-8)" stroke-width="10" fill="#85C0BA" xlink:href="#path-7"></use>
+            <use id="Straw" stroke="#B6E6D9" mask="url(#mask-10)" stroke-width="2" fill-opacity="0.5" fill="#FFFFFF" xlink:href="#path-9"></use>
         </g>
     </g>
 </svg>

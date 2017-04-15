@@ -33,67 +33,65 @@
     <g id="Assets-For-Sher-Minn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Liquid_Temperature_Iced">
             <g id="Ice">
-                <g id="Group-2">
-                    <g id="Ice_5" transform="translate(113.000000, 2.000000)">
-                        <g id="Ice_5_Afloat_Group" transform="translate(0.797474, 0.487725)">
-                            <mask id="mask-2" fill="white">
-                                <use xlink:href="#path-1"></use>
-                            </mask>
-                            <g id="Ice_5_Afloat_Mask"></g>
-                            <g id="Ice_5_Afloat" mask="url(#mask-2)" transform="translate(24.630518, 26.583512) rotate(12.000000) translate(-24.630518, -26.583512) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
-                                <use mask="url(#mask-4)" xlink:href="#path-3"></use>
-                            </g>
+                <g id="Ice_5" transform="translate(113.000000, 2.000000)">
+                    <g id="Ice_5_Afloat_Group" transform="translate(0.797474, 0.487725)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Ice_5_Afloat_Mask"></g>
+                        <g id="Ice_5_Afloat" mask="url(#mask-2)" transform="translate(24.630518, 26.583512) rotate(12.000000) translate(-24.630518, -26.583512) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
+                            <use mask="url(#mask-4)" xlink:href="#path-3"></use>
                         </g>
-                        <path d="M9.7026934,10.7102501 C10.3792774,7.60539354 13.505068,5.62277213 16.6926262,6.2836588 L41.608578,11.449563 C44.7924273,12.1096807 46.8238395,15.1669716 46.1483835,18.2666519 L40.8265229,42.6887701 C40.1499389,45.7936267 37.0241483,47.7762481 33.8365901,47.1153614 L8.92063826,41.9494572 C5.73678896,41.2893395 3.70537677,38.2320487 4.38083279,35.1323683" id="Ice_5_Submerged" fill-opacity="0.1" fill="#FFFFFF"></path>
                     </g>
-                    <g id="Ice_4" transform="translate(41.000000, 0.000000)">
-                        <g id="Ice_4_Afloat_Group" transform="translate(1.134328, 2.617021)">
-                            <mask id="mask-6" fill="white">
-                                <use xlink:href="#path-5"></use>
-                            </mask>
-                            <g id="Ice_4_Afloat_Mask"></g>
-                            <g id="Ice_4_Afloat" mask="url(#mask-6)" transform="translate(23.194784, 21.829810) rotate(62.000000) translate(-23.194784, -21.829810) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
-                                <use mask="url(#mask-8)" xlink:href="#path-7"></use>
-                            </g>
+                    <path d="M9.7026934,10.7102501 C10.3792774,7.60539354 13.505068,5.62277213 16.6926262,6.2836588 L41.608578,11.449563 C44.7924273,12.1096807 46.8238395,15.1669716 46.1483835,18.2666519 L40.8265229,42.6887701 C40.1499389,45.7936267 37.0241483,47.7762481 33.8365901,47.1153614 L8.92063826,41.9494572 C5.73678896,41.2893395 3.70537677,38.2320487 4.38083279,35.1323683" id="Ice_5_Submerged" fill-opacity="0.1" fill="#FFFFFF"></path>
+                </g>
+                <g id="Ice_4" transform="translate(41.000000, 0.000000)">
+                    <g id="Ice_4_Afloat_Group" transform="translate(1.134328, 2.617021)">
+                        <mask id="mask-6" fill="white">
+                            <use xlink:href="#path-5"></use>
+                        </mask>
+                        <g id="Ice_4_Afloat_Mask"></g>
+                        <g id="Ice_4_Afloat" mask="url(#mask-6)" transform="translate(23.194784, 21.829810) rotate(62.000000) translate(-23.194784, -21.829810) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
+                            <use mask="url(#mask-8)" xlink:href="#path-7"></use>
                         </g>
-                        <rect id="Ice_4_Submerged" fill-opacity="0.2" fill="#FFFFFF" transform="translate(24.329112, 24.446831) rotate(62.000000) translate(-24.329112, -24.446831) " x="6.32588117" y="6.51217517" width="36.0064618" height="35.8693123" rx="10"></rect>
                     </g>
-                    <g id="Ice_3" transform="translate(152.000000, 22.000000)">
-                        <g id="Ice_3_Afloat_Group" transform="translate(0.619403, 0.680851)">
-                            <mask id="mask-10" fill="white">
-                                <use xlink:href="#path-9"></use>
-                            </mask>
-                            <g id="Ice_3_Afloat_Mask"></g>
-                            <g id="Ice_3_Afloat" mask="url(#mask-10)" transform="translate(16.950034, 15.807793) rotate(62.000000) translate(-16.950034, -15.807793) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
-                                <use mask="url(#mask-12)" xlink:href="#path-11"></use>
-                            </g>
+                    <rect id="Ice_4_Submerged" fill-opacity="0.2" fill="#FFFFFF" transform="translate(24.329112, 24.446831) rotate(62.000000) translate(-24.329112, -24.446831) " x="6.32588117" y="6.51217517" width="36.0064618" height="35.8693123" rx="10"></rect>
+                </g>
+                <g id="Ice_3" transform="translate(152.000000, 22.000000)">
+                    <g id="Ice_3_Afloat_Group" transform="translate(0.619403, 0.680851)">
+                        <mask id="mask-10" fill="white">
+                            <use xlink:href="#path-9"></use>
+                        </mask>
+                        <g id="Ice_3_Afloat_Mask"></g>
+                        <g id="Ice_3_Afloat" mask="url(#mask-10)" transform="translate(16.950034, 15.807793) rotate(62.000000) translate(-16.950034, -15.807793) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
+                            <use mask="url(#mask-12)" xlink:href="#path-11"></use>
                         </g>
-                        <path d="M14.0258906,3.47245546 C18.9048113,0.878287325 24.9624612,2.72953194 27.5564963,7.60820247 L30.5163499,13.1748775 C33.1101764,18.0531557 31.2573455,24.1109809 26.3788209,26.7049384 L21.1129838,29.5048337 C16.2340631,32.0990018 10.1764133,30.2477572 7.58237813,25.3690867 L4.62252449,19.8024116 C2.028698,14.9241335 3.88152897,8.86630824 8.7600535,6.27235074 L14.0258906,3.47245546 Z" id="Ice_3_Submerged" fill-opacity="0.2" fill="#FFFFFF"></path>
                     </g>
-                    <g id="Ice_2" transform="translate(0.000000, 6.000000)">
-                        <g id="Ice_2_Afloat_Group" transform="translate(0.921642, 0.978723)">
-                            <mask id="mask-14" fill="white">
-                                <use xlink:href="#path-13"></use>
-                            </mask>
-                            <g id="Ice_2_Afloat_Mask"></g>
-                            <g id="Ice_2_Afloat" mask="url(#mask-14)" transform="translate(31.413665, 39.859498) rotate(13.000000) translate(-31.413665, -39.859498) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
-                                <use mask="url(#mask-16)" xlink:href="#path-15"></use>
-                            </g>
+                    <path d="M14.0258906,3.47245546 C18.9048113,0.878287325 24.9624612,2.72953194 27.5564963,7.60820247 L30.5163499,13.1748775 C33.1101764,18.0531557 31.2573455,24.1109809 26.3788209,26.7049384 L21.1129838,29.5048337 C16.2340631,32.0990018 10.1764133,30.2477572 7.58237813,25.3690867 L4.62252449,19.8024116 C2.028698,14.9241335 3.88152897,8.86630824 8.7600535,6.27235074 L14.0258906,3.47245546 Z" id="Ice_3_Submerged" fill-opacity="0.2" fill="#FFFFFF"></path>
+                </g>
+                <g id="Ice_2" transform="translate(0.000000, 6.000000)">
+                    <g id="Ice_2_Afloat_Group" transform="translate(0.921642, 0.978723)">
+                        <mask id="mask-14" fill="white">
+                            <use xlink:href="#path-13"></use>
+                        </mask>
+                        <g id="Ice_2_Afloat_Mask"></g>
+                        <g id="Ice_2_Afloat" mask="url(#mask-14)" transform="translate(31.413665, 39.859498) rotate(13.000000) translate(-31.413665, -39.859498) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
+                            <use mask="url(#mask-16)" xlink:href="#path-15"></use>
                         </g>
-                        <rect id="Ice_2_Submerged" fill-opacity="0.3" fill="#FFFFFF" transform="translate(32.335307, 40.838221) rotate(13.000000) translate(-32.335307, -40.838221) " x="6.79659402" y="15.640245" width="51.0774254" height="50.3959529" rx="10"></rect>
                     </g>
-                    <g id="Ice_1" transform="translate(63.179104, 6.978723)">
-                        <g id="Ice_1_Afloat_Group">
-                            <mask id="mask-18" fill="white">
-                                <use xlink:href="#path-17"></use>
-                            </mask>
-                            <g id="Ice_1_Afloat_Mask"></g>
-                            <g id="Ice_1_Afloat" mask="url(#mask-18)" transform="translate(36.315789, 38.284723) rotate(62.000000) translate(-36.315789, -38.284723) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
-                                <use mask="url(#mask-20)" xlink:href="#path-19"></use>
-                            </g>
+                    <rect id="Ice_2_Submerged" fill-opacity="0.3" fill="#FFFFFF" transform="translate(32.335307, 40.838221) rotate(13.000000) translate(-32.335307, -40.838221) " x="6.79659402" y="15.640245" width="51.0774254" height="50.3959529" rx="10"></rect>
+                </g>
+                <g id="Ice_1" transform="translate(63.179104, 6.978723)">
+                    <g id="Ice_1_Afloat_Group">
+                        <mask id="mask-18" fill="white">
+                            <use xlink:href="#path-17"></use>
+                        </mask>
+                        <g id="Ice_1_Afloat_Mask"></g>
+                        <g id="Ice_1_Afloat" mask="url(#mask-18)" transform="translate(36.315789, 38.284723) rotate(62.000000) translate(-36.315789, -38.284723) " stroke-width="2" stroke="#D7D7D7" fill="#FFFFFF">
+                            <use mask="url(#mask-20)" xlink:href="#path-19"></use>
                         </g>
-                        <rect id="Ice_1_Submerged" fill-opacity="0.3" fill="#FFFFFF" transform="translate(36.315789, 38.284723) rotate(62.000000) translate(-36.315789, -38.284723) " x="9.46332339" y="11.7905216" width="53.704932" height="52.9884034" rx="10"></rect>
                     </g>
+                    <rect id="Ice_1_Submerged" fill-opacity="0.3" fill="#FFFFFF" transform="translate(36.315789, 38.284723) rotate(62.000000) translate(-36.315789, -38.284723) " x="9.46332339" y="11.7905216" width="53.704932" height="52.9884034" rx="10"></rect>
                 </g>
             </g>
         </g>
