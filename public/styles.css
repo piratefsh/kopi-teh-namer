@@ -472,6 +472,9 @@ template {
   position: absolute;
   top: 0; }
 
+.num-order {
+  position: relative; }
+
 .liquid {
   bottom: -5px;
   color: white;
