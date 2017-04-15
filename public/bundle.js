@@ -22667,15 +22667,15 @@
 
 	var _VariationSelector2 = _interopRequireDefault(_VariationSelector);
 
-	var _Constants = __webpack_require__(247);
+	var _Constants = __webpack_require__(250);
 
 	var _Constants2 = _interopRequireDefault(_Constants);
 
-	var _Drink = __webpack_require__(248);
+	var _Drink = __webpack_require__(251);
 
 	var _Drink2 = _interopRequireDefault(_Drink);
 
-	var _DrinkDisplay = __webpack_require__(256);
+	var _DrinkDisplay = __webpack_require__(259);
 
 	var _DrinkDisplay2 = _interopRequireDefault(_DrinkDisplay);
 
@@ -24271,6 +24271,10 @@
 
 	var _Liquid2 = _interopRequireDefault(_Liquid);
 
+	var _Temperature = __webpack_require__(247);
+
+	var _Temperature2 = _interopRequireDefault(_Temperature);
+
 	var PropertyVisualizer = (function (_React$Component) {
 	  _inherits(PropertyVisualizer, _React$Component);
 
@@ -24311,12 +24315,22 @@
 	      return ['base', 'milk', 'dilution', 'sweetness'].indexOf(this.props.label) > -1;
 	    }
 	  }, {
+	    key: 'isTemperature',
+	    value: function isTemperature() {
+	      return this.props.label === 'temperature';
+	    }
+	  }, {
 	    key: 'getVisualType',
 	    value: function getVisualType() {
 	      if (this.isLiquid()) {
 	        return _react2['default'].createElement(_Liquid2['default'], {
 	          color: this.getColor(),
 	          size: this.getSize()
+	        });
+	      } else if (this.isTemperature()) {
+	        var temp = _PropertyConstants2['default'].TEMPS[this.props.selected];
+	        return _react2['default'].createElement(_Temperature2['default'], {
+	          temperature: temp
 	        });
 	      }
 	      return null;
@@ -24353,15 +24367,15 @@
 /* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "acefec5f16f4e11100a912b31bbbc59d.svg";
+	module.exports = __webpack_require__.p + "2107c02417779b2688039c893a46ff1f.svg";
 
 /***/ },
 /* 244 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	var COLORS = {
@@ -24440,13 +24454,16 @@
 	  dilution: [0, 5, 10, 20]
 	};
 
+	var TEMPS = ['hot', 'cold'];
+
 	var PropertyConstants = {
 	  COLORS: COLORS,
-	  SIZES: SIZES
+	  SIZES: SIZES,
+	  TEMPS: TEMPS
 	};
 
-	exports["default"] = PropertyConstants;
-	module.exports = exports["default"];
+	exports['default'] = PropertyConstants;
+	module.exports = exports['default'];
 
 /***/ },
 /* 245 */
@@ -24622,6 +24639,113 @@
 
 /***/ },
 /* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _get = __webpack_require__(200)['default'];
+
+	var _inherits = __webpack_require__(214)['default'];
+
+	var _createClass = __webpack_require__(225)['default'];
+
+	var _classCallCheck = __webpack_require__(228)['default'];
+
+	var _interopRequireDefault = __webpack_require__(2)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _imagesLiquid_Temperature_IcedSvg = __webpack_require__(248);
+
+	var _imagesLiquid_Temperature_IcedSvg2 = _interopRequireDefault(_imagesLiquid_Temperature_IcedSvg);
+
+	var _imagesHotSteamSvg = __webpack_require__(249);
+
+	var _imagesHotSteamSvg2 = _interopRequireDefault(_imagesHotSteamSvg);
+
+	var _react = __webpack_require__(198);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(234);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _Utils = __webpack_require__(246);
+
+	var _Utils2 = _interopRequireDefault(_Utils);
+
+	var Temperature = (function (_React$Component) {
+	  _inherits(Temperature, _React$Component);
+
+	  function Temperature(props) {
+	    _classCallCheck(this, Temperature);
+
+	    _get(Object.getPrototypeOf(Temperature.prototype), 'constructor', this).call(this, props);
+	    this.state = {
+	      style: this.makeStyle(props)
+	    };
+	  }
+
+	  _createClass(Temperature, [{
+	    key: 'makeStyle',
+	    value: function makeStyle() {
+	      var props = arguments.length <= 0 || arguments[0] === undefined ? this.props : arguments[0];
+
+	      console.log(props.temperature);
+	      if (props.temperature == 'hot') {
+	        return {
+	          backgroundImage: 'url(' + _imagesHotSteamSvg2['default'] + ')',
+	          width: '30px',
+	          height: '15px',
+	          display: 'block',
+	          marginTop: '-16px',
+	          backgroundSize: 'contain'
+	        };
+	      } else if (props.temperature == 'cold') {
+	        return {
+	          backgroundImage: 'url(' + _imagesLiquid_Temperature_IcedSvg2['default'] + ')',
+	          width: '30px',
+	          height: '15px',
+	          marginTop: '6px',
+	          display: 'block',
+	          backgroundSize: 'contain'
+	        };
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'temperature' },
+	        _react2['default'].createElement('span', { style: this.makeStyle() })
+	      );
+	    }
+	  }]);
+
+	  return Temperature;
+	})(_react2['default'].Component);
+
+	exports['default'] = Temperature;
+	module.exports = exports['default'];
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "6f3adb7598cbe9cb587951fd0ecd4cee.svg";
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "7254291a6e5478d540d1083c36f3a87e.svg";
+
+/***/ },
+/* 250 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -24742,7 +24866,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 248 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24757,7 +24881,7 @@
 	  value: true
 	});
 
-	var _DrinkProperty = __webpack_require__(249);
+	var _DrinkProperty = __webpack_require__(252);
 
 	var _DrinkProperty2 = _interopRequireDefault(_DrinkProperty);
 
@@ -24822,14 +24946,14 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 249 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _classCallCheck = __webpack_require__(228)["default"];
 
-	var _Object$assign = __webpack_require__(250)["default"];
+	var _Object$assign = __webpack_require__(253)["default"];
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -24846,36 +24970,36 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 250 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(251), __esModule: true };
+	module.exports = { "default": __webpack_require__(254), __esModule: true };
 
 /***/ },
-/* 251 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(252);
+	__webpack_require__(255);
 	module.exports = __webpack_require__(212).Object.assign;
 
 /***/ },
-/* 252 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.3.1 Object.assign(target, source)
 	var $def = __webpack_require__(210);
 
-	$def($def.S + $def.F, 'Object', {assign: __webpack_require__(253)});
+	$def($def.S + $def.F, 'Object', {assign: __webpack_require__(256)});
 
 /***/ },
-/* 253 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var toObject = __webpack_require__(232)
 	  , IObject  = __webpack_require__(206)
-	  , enumKeys = __webpack_require__(254)
-	  , has      = __webpack_require__(255);
+	  , enumKeys = __webpack_require__(257)
+	  , has      = __webpack_require__(258);
 
 	// should work with symbols and should have deterministic property order (V8 bug)
 	module.exports = __webpack_require__(213)(function(){
@@ -24903,7 +25027,7 @@
 	} : Object.assign;
 
 /***/ },
-/* 254 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
@@ -24922,7 +25046,7 @@
 	};
 
 /***/ },
-/* 255 */
+/* 258 */
 /***/ function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -24931,7 +25055,7 @@
 	};
 
 /***/ },
-/* 256 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
