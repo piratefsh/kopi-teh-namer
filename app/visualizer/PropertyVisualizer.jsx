@@ -1,6 +1,7 @@
 import React from 'react';
 import backgroundUrl from 'images/liquid-bg-nopadding.svg';
 import Utils from 'Utils';
+import PropertyConstants from './PropertyConstants';
 
 class Liquid extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Liquid extends React.Component {
         middle: {
           backgroundColor: Utils.hslCSS(props.color),
           width: '30px',
-          height: `${props.size}`
+          height: `${props.size}`,
         },
         bottom: {
           position: 'relative',
@@ -26,48 +27,18 @@ class Liquid extends React.Component {
           width: '24px',
           height: '10px',
           borderRadius: '50%',
-          backgroundColor: Utils.hslCSS(props.color)
+          backgroundColor: Utils.hslCSS(props.color),
         },
-      }
-    }
+      },
+    };
   }
   render() {
     return (<div className="liquid">
-      <span className="top" style={this.state.style.top}/>
-      <span className="middle" style={this.state.style.middle}/>
-      <span className="bottom" style={this.state.style.bottom}/>
+      <span className="top" style={this.state.style.top} />
+      <span className="middle" style={this.state.style.middle} />
+      <span className="bottom" style={this.state.style.bottom} />
     </div>);
   }
-}
-
-const COLORS ={
-  base: {
-    h: 18,
-    s: 69,
-    l: 40
-  },
-  milk: {
-    h: 56,
-    s: 18,
-    l: 98,
-  },
-  default: {
-    h: 0,
-    s: 0,
-    l: 50,
-  },
-  dilution: {
-    h: 241,
-    s: 22,
-    l: 82,
-  }
-}
-
-const SIZES ={
-  base: 30,
-  milk: 10,
-  default: 20,
-  dilution: 30,
 }
 
 class PropertyVisualizer extends React.Component {
@@ -79,12 +50,24 @@ class PropertyVisualizer extends React.Component {
       },
     };
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    // console.log(this.props, prevProps)
+  }
+
   render() {
+    const col = PropertyConstants.COLORS[this.props.name];
+
+    if (col === undefined) {
+      return null;
+    }
+
+    const color = col[this.props.selected];
     return (
-      <div className='liquid-container'>
+      <div className="liquid-container">
         <Liquid
-          color={COLORS[this.props.name] || COLORS['default']}
-          size={SIZES[this.props.name] || SIZES['default']}
+          color={color}
+          size={PropertyConstants.SIZES[this.props.name] || PropertyConstants.SIZES.default}
         />
         <img
           src={backgroundUrl}
