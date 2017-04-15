@@ -5,7 +5,6 @@ import Utils from 'Utils';
 class Liquid extends React.Component {
   constructor(props) {
     super(props);
-    console.log(Utils.hslCSS(props.color))
     this.state = {
       style: {
         top: {
@@ -19,7 +18,7 @@ class Liquid extends React.Component {
         middle: {
           backgroundColor: Utils.hslCSS(props.color),
           width: '30px',
-          height: '30px'
+          height: `${props.size}`
         },
         bottom: {
           position: 'relative',
@@ -63,6 +62,14 @@ const COLORS ={
     l: 82,
   }
 }
+
+const SIZES ={
+  base: 30,
+  milk: 10,
+  default: 20,
+  dilution: 30,
+}
+
 class PropertyVisualizer extends React.Component {
   constructor(props) {
     super(props);
@@ -75,7 +82,10 @@ class PropertyVisualizer extends React.Component {
   render() {
     return (
       <div className='liquid-container'>
-        <Liquid color={COLORS[this.props.name] || COLORS['default']}/>
+        <Liquid
+          color={COLORS[this.props.name] || COLORS['default']}
+          size={SIZES[this.props.name] || SIZES['default']}
+        />
         <img
           src={backgroundUrl}
           style={this.state.style}

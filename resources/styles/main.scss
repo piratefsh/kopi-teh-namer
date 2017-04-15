@@ -4,7 +4,7 @@
 
 body {
   color: $white;
-  background-color: #5A58A3;
+  background-color: $bg-color;
   font-family: Helvetica;
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ body {
 }
 
 header {
-  background-color: darken($secondary-color, 10%);
+  background-color: $secondary-color;
   box-shadow: 0 0 3px darken($secondary-color, 30%);
   box-sizing: border-box;
   height: $header-height;
