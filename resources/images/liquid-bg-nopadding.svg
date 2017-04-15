@@ -19,29 +19,28 @@
             <use xlink:href="#path-9"></use>
         </mask>
     </defs>
-    <g id="Assets-For-Sher-Minn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+    <g id="Assets-For-Sher-Minn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="liquid-bg-nopadding">
             <g id="Guide">
-                <path d="M260,25 C260,25 230,342 230,342 C230,351.989246 183.764979,375.18359 130,374.997921 C75.4087746,374.809399 30,351.989246 30,342 C30,342 0,25 0,25 L260,25 Z" id="Guide_Body"></path>
                 <g id="Left-Mask">
                     <mask id="mask-2" fill="white">
                         <use xlink:href="#path-1"></use>
                     </mask>
                     <g id="Rectangle"></g>
-                    <g id="Mask" mask="url(#mask-2)" stroke-width="10" stroke="#FAF7CC" stroke-dasharray="8,10">
+                    <g id="Mask" mask="url(#mask-2)" stroke-width="10" stroke="#FAF7CC" stroke-dasharray="11,20">
                         <use mask="url(#mask-4)" xlink:href="#path-3"></use>
                     </g>
                 </g>
-                <g id="Left-Mask-Copy" transform="translate(195.000000, 187.500000) scale(-1, 1) translate(-195.000000, -187.500000) translate(130.000000, 0.000000)">
+                <g id="Right-Mask" transform="translate(195.000000, 187.500000) scale(-1, 1) translate(-195.000000, -187.500000) translate(130.000000, 0.000000)">
                     <mask id="mask-6" fill="white">
                         <use xlink:href="#path-5"></use>
                     </mask>
                     <g id="Rectangle"></g>
-                    <g id="Mask" mask="url(#mask-6)" stroke-width="10" stroke="#FAF7CC" stroke-dasharray="8,10">
+                    <g id="Mask" mask="url(#mask-6)" stroke-width="10" stroke="#FAF7CC" stroke-dasharray="11,20">
                         <use mask="url(#mask-8)" xlink:href="#path-7"></use>
                     </g>
                 </g>
-                <use id="Guide_Surface" stroke="#FAF7CC" mask="url(#mask-10)" stroke-width="10" stroke-dasharray="8,10" fill="#5A58A3" xlink:href="#path-9"></use>
+                <use id="Guide_Surface" stroke="#FAF7CC" mask="url(#mask-10)" stroke-width="10" stroke-dasharray="14,20" fill="#1D2A3A" xlink:href="#path-9"></use>
             </g>
         </g>
     </g>
