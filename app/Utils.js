@@ -15,9 +15,17 @@ function makeKopiArgs(ids, obj){
   return args;
 }
 
+function hslCSS({h, s, l}, darken, lighten) {
+  if(darken) {
+    l -= darken;
+  }
+  return `hsl(${h}, ${s}%, ${l}%)`;
+}
+
 const Utils = {
   getDefaultProps,
   makeKopiArgs,
+  hslCSS
 }
 
 export default Utils;
