@@ -24570,7 +24570,7 @@
 	  }
 	  return _react2['default'].createElement(
 	    'div',
-	    { className: 'part' },
+	    { className: 'part', tabIndex: '0' },
 	    _react2['default'].createElement(
 	      'div',
 	      null,
