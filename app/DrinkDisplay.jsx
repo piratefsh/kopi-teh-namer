@@ -5,7 +5,7 @@ function DrinkDisplayPart(props) {
   if (props.hideDefault && !props.part.label) {
     return null;
   }
-  return (<div className="part">
+  return (<div className="part" tabIndex="0">
     <div>{props.part.label || <div className="default"><br /></div>}</div>
     <div>{props.part.definition || <br />}</div>
 
