@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import backgroundUrl from 'images/liquid-bg-nopadding.svg';
 import PropertyConstants from './PropertyConstants';
 import Liquid from './Liquid';
+import Temperature from './Temperature';
 
 class PropertyVisualizer extends React.Component {
   constructor(props) {
@@ -36,12 +37,22 @@ class PropertyVisualizer extends React.Component {
     return ['base', 'milk', 'dilution', 'sweetness'].indexOf(this.props.label) > -1;
   }
 
+  isTemperature() {
+    return this.props.label === 'temperature';
+  }
+
   getVisualType() {
     if (this.isLiquid()) {
       return (<Liquid
         color={this.getColor()}
         size={this.getSize()}
       />);
+    }
+    else if (this.isTemperature()){
+      const temp = PropertyConstants.TEMPS[this.props.selected];
+      return (<Temperature
+          temperature={temp}
+        />)
     }
     return null;
   }

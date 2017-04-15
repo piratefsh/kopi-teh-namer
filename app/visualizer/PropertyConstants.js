@@ -85,9 +85,12 @@ const SIZES = {
   dilution: [0, 5, 10, 20],
 };
 
+const TEMPS = ['hot', 'cold'];
+
 const PropertyConstants = {
   COLORS,
   SIZES,
+  TEMPS
 };
 
 export default PropertyConstants;
