@@ -12,18 +12,20 @@ class NumOrder extends React.Component {
 
   makeStyle(props = this.props) {
     return {
-      backgroundImage: `url(${steamUrl})`,
-      width: '30px',
-      height: '15px',
+      textAlign: 'center',
+      fontSize: '18px',
       display: 'block',
-      marginTop: '-16px',
-      backgroundSize: 'contain',
+      position: 'absolute',
+      top: '14px',
+      width: '100%',
     };
   }
 
   render() {
     return (<div className="num-order">
-      <span style={this.makeStyle()} />
+      <span style={this.makeStyle()} >
+        <small>x</small>{this.props.numOrder}
+      </span>
     </div>);
   }
 }

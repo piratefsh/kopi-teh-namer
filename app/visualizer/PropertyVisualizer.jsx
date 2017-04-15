@@ -4,6 +4,7 @@ import backgroundUrl from 'images/liquid-bg-nopadding.svg';
 import PropertyConstants from './PropertyConstants';
 import Liquid from './Liquid';
 import Temperature from './Temperature';
+import NumOrder from './NumOrder';
 
 class PropertyVisualizer extends React.Component {
   constructor(props) {
@@ -41,6 +42,10 @@ class PropertyVisualizer extends React.Component {
     return this.props.label === 'temperature';
   }
 
+  isNumOrder() {
+    return this.props.label === 'order';
+  }
+
   getVisualType() {
     if (this.isLiquid()) {
       return (<Liquid
@@ -52,6 +57,11 @@ class PropertyVisualizer extends React.Component {
       const temp = PropertyConstants.TEMPS[this.props.selected];
       return (<Temperature
           temperature={temp}
+        />)
+    }
+    else if (this.isNumOrder()){
+      return (<NumOrder
+          numOrder={PropertyConstants.ORDER[this.props.selected]}
         />)
     }
     return null;

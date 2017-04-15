@@ -86,11 +86,13 @@ const SIZES = {
 };
 
 const TEMPS = ['hot', 'cold'];
+const ORDER = [1, 2];
 
 const PropertyConstants = {
   COLORS,
   SIZES,
-  TEMPS
+  TEMPS,
+  ORDER
 };
 
 export default PropertyConstants;
