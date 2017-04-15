@@ -1,14 +1,10 @@
 @import '~normalize.css/normalize.css';
+@import 'constants';
 @import 'visualizer';
 
-$space: 8px;
-$white: #ffffff;
-$grey: #999999;
-$skyblue: #b6e8d9;
-$header-height: 120px;
-
 body {
-  color: #444444;
+  color: $white;
+  background-color: #5A58A3;
   font-family: Helvetica;
   margin: 0;
   padding: 0;
@@ -26,15 +22,15 @@ body {
 }
 
 header {
-  background-color: $skyblue;
-  box-shadow: 0 0 3px darken($skyblue, 30%);
+  background-color: darken($secondary-color, 10%);
+  box-shadow: 0 0 3px darken($secondary-color, 30%);
   box-sizing: border-box;
   height: $header-height;
   padding: $space * 3 0;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 9;
 
   @media(max-width: 480px) {
     height: $header-height * 1.5;;
@@ -65,7 +61,7 @@ fieldset {
     padding-top: $space;
 
     &:before {
-      background-color: rgba($skyblue, 0.6);
+      background-color: lighten($secondary-color, 10%);
       content: '';
       display: block;
       height: 1px;
@@ -90,7 +86,7 @@ label,
   margin-bottom: $space;
 
   em {
-    color: #999999;
+    color: $grey;
     font-size: 0.8em;
   }
 }
@@ -131,7 +127,7 @@ input[type=radio] + label {
 
   > div {
     &:first-child{
-      border-bottom: 1px dotted darken($skyblue, 60%);
+      border-bottom: 1px dotted darken($secondary-color, 60%);
       font-size: 2em;
       margin-bottom: $space / 2;
       padding-bottom: $space / 2;

@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundUrl from 'images/liquid-bg.svg';
+import backgroundUrl from 'images/liquid-bg-nopadding.svg';
 
 class Liquid extends React.Component {
   constructor(props) {
@@ -8,9 +8,9 @@ class Liquid extends React.Component {
       style: {
         top: {
           position: 'relative',
-          top: '5px',
+          top: '3px',
           width: '30px',
-          height: '10px',
+          height: '6px',
           borderRadius: '50%',
           backgroundColor: 'hsl(16, 71%, 32%)'
         },
@@ -43,7 +43,7 @@ class PropertyVisualizer extends React.Component {
     super(props);
     this.state = {
       style: {
-        width: '50px',
+        width: '32px',
       },
     };
   }
