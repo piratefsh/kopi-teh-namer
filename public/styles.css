@@ -667,6 +667,14 @@ input[type=radio] + label {
     .part:hover .part-type, .part:focus .part-type {
       display: block; }
 
+footer {
+  background-color: #2e435c;
+  margin-top: 24px;
+  padding: 8px;
+  font-size: 0.8em; }
+  footer a {
+    color: #9a99c8; }
+
 .hide-defaults {
   position: absolute;
   top: 0;
