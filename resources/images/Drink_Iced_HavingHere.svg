@@ -19,10 +19,6 @@
     </defs>
     <g id="Assets-For-Sher-Minn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Drink_Iced_HavingHere">
-            <g id="Liquid_Container" transform="translate(70.000000, 93.580292)">
-                <path d="M260.169953,25 C260.169953,25 230.169953,342 230.169953,342 C230.169953,351.989246 183.934931,375.18359 130.169953,374.997921 C75.5787273,374.809399 30.1699527,351.989246 30.1699527,342 C30.1699527,342 0.169952689,25 0.169952689,25 L260.169953,25 Z" id="Liquid_Container_Body"></path>
-                <ellipse id="Liquid_Container_Surface" cx="130.169953" cy="25" rx="128.915024" ry="25"></ellipse>
-            </g>
             <use id="Cup_Takeaway_Body" stroke="#A9DBD6" mask="url(#mask-2)" stroke-width="10" fill="#85C0BA" xlink:href="#path-1"></use>
             <use id="Cup_Takeaway_Mouth" stroke="#A9DBD6" mask="url(#mask-4)" stroke-width="10" fill="#85C0BA" xlink:href="#path-3"></use>
             <use id="Straw" stroke="#B6E6D9" mask="url(#mask-6)" stroke-width="2" fill-opacity="0.5" fill="#FFFFFF" transform="translate(294.353518, 224.000000) rotate(7.000000) translate(-294.353518, -224.000000) " xlink:href="#path-5"></use>
