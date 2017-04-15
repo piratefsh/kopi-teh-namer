@@ -11,7 +11,7 @@ body {
   color: #444;
   padding-top: $header-height + 16px;
   @media(max-width: 480px){
-    padding-top: 0;
+    // padding-top: 0;
   }
 }
 
@@ -34,8 +34,8 @@ header {
   padding: $space * 3 0;
   z-index: 2;
   @media(max-width: 480px){
-    position: static;
-    height: auto;
+    // position: static;
+    height: $header-height*1.5;;
   }
 
 }

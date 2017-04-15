@@ -465,9 +465,6 @@ body {
   padding: 0;
   color: #444;
   padding-top: 136px; }
-  @media (max-width: 480px) {
-    body {
-      padding-top: 0; } }
 
 .container {
   margin: 0 auto;
@@ -486,8 +483,7 @@ header {
   z-index: 2; }
   @media (max-width: 480px) {
     header {
-      position: static;
-      height: auto; } }
+      height: 180px; } }
 
 form {
   display: flex;
