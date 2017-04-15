@@ -27,7 +27,7 @@
   span {
     display: block;
     margin: 0 auto;
-    transition: all 0.3s;
+    transition: height 0.3s, background-color 0.3s;
     &.top {
       z-index: 3;
     }

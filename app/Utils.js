@@ -15,7 +15,7 @@ function makeKopiArgs(ids, obj){
   return args;
 }
 
-function hslCSS({h, s, l, a=1}, darken, lighten) {
+function hslCSS({h=0, s=0, l=0, a=1}, darken, lighten) {
   if(darken) {
     l -= darken;
   }
