@@ -598,15 +598,16 @@ input[type=radio] + label {
   box-sizing: border-box;
   padding-right: 16px;
   vertical-align: middle; }
+  .input-group.input-group-hoverable > div {
+    border-radius: 4px;
+    padding: 4px;
+    transition: all 0.3s; }
+    .input-group.input-group-hoverable > div:hover, .input-group.input-group-hoverable > div:focus {
+      background-color: rgba(255, 255, 255, 0.1); }
   .input-group * {
     vertical-align: middle; }
   .input-group > div {
-    border-radius: 4px;
-    margin-bottom: 4px;
-    padding: 4px;
-    transition: all 0.3s; }
-    .input-group > div:hover, .input-group > div:focus {
-      background-color: rgba(255, 255, 255, 0.1); }
+    margin-bottom: 4px; }
   .input-group .label {
     font-weight: bold; }
 

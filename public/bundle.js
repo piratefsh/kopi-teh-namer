@@ -23365,7 +23365,7 @@
 	        ),
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'input-group' },
+	          { className: 'input-group input-group-hoverable' },
 	          this.makeRadios()
 	        )
 	      );
@@ -24292,7 +24292,7 @@
 	    _get(Object.getPrototypeOf(PropertyVisualizer.prototype), 'constructor', this).call(this, props);
 	    this.state = {
 	      style: {
-	        width: '32px'
+	        width: '34px'
 	      },
 	      color: this.getColor(props.selected)
 	    };
