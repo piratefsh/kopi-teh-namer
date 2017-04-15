@@ -22675,11 +22675,11 @@
 
 	var _Drink2 = _interopRequireDefault(_Drink);
 
-	var _DrinkDisplay = __webpack_require__(244);
+	var _DrinkDisplay = __webpack_require__(251);
 
 	var _DrinkDisplay2 = _interopRequireDefault(_DrinkDisplay);
 
-	var _Utils = __webpack_require__(245);
+	var _Utils = __webpack_require__(252);
 
 	var _Utils2 = _interopRequireDefault(_Utils);
 
@@ -23354,7 +23354,7 @@
 	          { className: 'input-group label' },
 	          _react2['default'].createElement(
 	            'span',
-	            { className: 'label' },
+	            { className: 'label uppercase' },
 	            this.props.label
 	          )
 	        ),
@@ -24357,9 +24357,16 @@
 
 	var _classCallCheck = __webpack_require__(228)['default'];
 
+	var _interopRequireDefault = __webpack_require__(2)['default'];
+
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
+
+	var _DrinkProperty = __webpack_require__(244);
+
+	var _DrinkProperty2 = _interopRequireDefault(_DrinkProperty);
+
 	Array.prototype.clean = function clean() {
 	  return this.filter(function (e) {
 	    return e && e.length > 0;
@@ -24378,7 +24385,7 @@
 
 	    _classCallCheck(this, Drink);
 
-	    this.parts = [base, milk, dilution, temperature, sweetness, togo, order];
+	    this.parts = [new _DrinkProperty2['default'](base, 'base'), new _DrinkProperty2['default'](milk, 'milk'), new _DrinkProperty2['default'](dilution, 'dilution'), new _DrinkProperty2['default'](temperature, 'temperature'), new _DrinkProperty2['default'](sweetness, 'sweetness'), new _DrinkProperty2['default'](togo, 'togo'), new _DrinkProperty2['default'](order, 'order')];
 	  }
 
 	  _createClass(Drink, [{
@@ -24424,7 +24431,124 @@
 /* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	var _classCallCheck = __webpack_require__(228)["default"];
+
+	var _Object$assign = __webpack_require__(245)["default"];
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var DrinkProperty = function DrinkProperty(property, type) {
+	  _classCallCheck(this, DrinkProperty);
+
+	  _Object$assign(this, property);
+	  this.type = type;
+	};
+
+	exports["default"] = DrinkProperty;
+	module.exports = exports["default"];
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(246), __esModule: true };
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(247);
+	module.exports = __webpack_require__(212).Object.assign;
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $def = __webpack_require__(210);
+
+	$def($def.S + $def.F, 'Object', {assign: __webpack_require__(248)});
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var toObject = __webpack_require__(232)
+	  , IObject  = __webpack_require__(206)
+	  , enumKeys = __webpack_require__(249)
+	  , has      = __webpack_require__(250);
+
+	// should work with symbols and should have deterministic property order (V8 bug)
+	module.exports = __webpack_require__(213)(function(){
+	  var a = Object.assign
+	    , A = {}
+	    , B = {}
+	    , S = Symbol()
+	    , K = 'abcdefghijklmnopqrst';
+	  A[S] = 7;
+	  K.split('').forEach(function(k){ B[k] = k; });
+	  return a({}, A)[S] != 7 || Object.keys(a({}, B)).join('') != K;
+	}) ? function assign(target, source){   // eslint-disable-line no-unused-vars
+	  var T = toObject(target)
+	    , l = arguments.length
+	    , i = 1;
+	  while(l > i){
+	    var S      = IObject(arguments[i++])
+	      , keys   = enumKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)if(has(S, key = keys[j++]))T[key] = S[key];
+	  }
+	  return T;
+	} : Object.assign;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// all enumerable object keys, includes symbols
+	var $ = __webpack_require__(203);
+	module.exports = function(it){
+	  var keys       = $.getKeys(it)
+	    , getSymbols = $.getSymbols;
+	  if(getSymbols){
+	    var symbols = getSymbols(it)
+	      , isEnum  = $.isEnum
+	      , i       = 0
+	      , key;
+	    while(symbols.length > i)if(isEnum.call(it, key = symbols[i++]))keys.push(key);
+	  }
+	  return keys;
+	};
+
+/***/ },
+/* 250 */
+/***/ function(module, exports) {
+
+	var hasOwnProperty = {}.hasOwnProperty;
+	module.exports = function(it, key){
+	  return hasOwnProperty.call(it, key);
+	};
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
+
+	var _get = __webpack_require__(200)['default'];
+
+	var _inherits = __webpack_require__(214)['default'];
+
+	var _createClass = __webpack_require__(225)['default'];
+
+	var _classCallCheck = __webpack_require__(228)['default'];
 
 	var _interopRequireDefault = __webpack_require__(2)['default'];
 
@@ -24441,6 +24565,9 @@
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
 	function DrinkDisplayPart(props) {
+	  if (props.hideDefault && !props.part.label) {
+	    return null;
+	  }
 	  return _react2['default'].createElement(
 	    'div',
 	    { className: 'part' },
@@ -24457,44 +24584,102 @@
 	      'div',
 	      null,
 	      props.part.definition || _react2['default'].createElement('br', null)
-	    )
-	  );
-	}
-
-	function DrinkDisplay(props) {
-	  return _react2['default'].createElement(
-	    'header',
-	    null,
+	    ),
 	    _react2['default'].createElement(
 	      'div',
-	      { className: 'container' },
+	      { className: 'part-type' },
 	      _react2['default'].createElement(
-	        'div',
+	        'span',
 	        null,
-	        props.drink.parts.map(function (part, i) {
-	          return _react2['default'].createElement(DrinkDisplayPart, {
-	            key: i,
-	            part: part
-	          });
-	        })
+	        _react2['default'].createElement(
+	          'strong',
+	          null,
+	          props.part.type
+	        )
 	      )
 	    )
 	  );
 	}
+
+	var DrinkDisplay = (function (_React$Component) {
+	  _inherits(DrinkDisplay, _React$Component);
+
+	  function DrinkDisplay(props) {
+	    _classCallCheck(this, DrinkDisplay);
+
+	    _get(Object.getPrototypeOf(DrinkDisplay.prototype), 'constructor', this).call(this, props);
+	    this.state = {
+	      hideDefaults: true
+	    };
+
+	    this.onShowDefaultChange = this.onShowDefaultChange.bind(this);
+	  }
+
+	  _createClass(DrinkDisplay, [{
+	    key: 'onShowDefaultChange',
+	    value: function onShowDefaultChange(e) {
+	      this.setState({
+	        hideDefaults: e.target.checked
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this = this;
+
+	      return _react2['default'].createElement(
+	        'header',
+	        null,
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'container' },
+	          _react2['default'].createElement(
+	            'div',
+	            null,
+	            this.props.drink.parts.map(function (part, i) {
+	              return _react2['default'].createElement(DrinkDisplayPart, {
+	                key: i,
+	                part: part,
+	                hideDefault: _this.state.hideDefaults
+	              });
+	            })
+	          ),
+	          _react2['default'].createElement(
+	            'span',
+	            { className: 'fieldset-sm right' },
+	            _react2['default'].createElement('input', {
+	              type: 'checkbox',
+	              checked: this.state.hideDefaults ? 'checked' : '',
+	              onChange: this.onShowDefaultChange
+	            }),
+	            _react2['default'].createElement(
+	              'label',
+	              null,
+	              'Hide defaults'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return DrinkDisplay;
+	})(_react2['default'].Component);
 
 	DrinkDisplay.propTypes = {
 	  drink: _propTypes2['default'].object.isRequired
 	};
 
 	DrinkDisplayPart.propTypes = {
-	  part: _propTypes2['default'].object.isRequired
+	  part: _propTypes2['default'].object.isRequired,
+	  hideDefault: _propTypes2['default'].bool.isRequired
 	};
 
 	exports['default'] = DrinkDisplay;
 	module.exports = exports['default'];
 
 /***/ },
-/* 245 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
