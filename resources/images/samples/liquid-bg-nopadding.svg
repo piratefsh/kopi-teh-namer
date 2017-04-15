@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="260px" height="375px" viewBox="0 0 260 375" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>liquid-bg-nopadding</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M260,25 C260,25 230,342 230,342 C230,351.989246 183.764979,375.18359 130,374.997921 C75.4087746,374.809399 30,351.989246 30,342 C30,342 0,25 0,25 L260,25 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="260" height="349.999029" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <ellipse id="path-3" cx="129.915024" cy="25" rx="128.915024" ry="25"></ellipse>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="257.830047" height="50" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Assets-For-Sher-Minn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="8,10" opacity="0.5">
+        <g id="liquid-bg-nopadding" stroke="#FAF7CC" stroke-width="10">
+            <g id="Guide">
+                <use id="Guide_Body" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                <use id="Guide_Surface" mask="url(#mask-4)" fill="#5A58A3" xlink:href="#path-3"></use>
+            </g>
+        </g>
+    </g>
+</svg>
