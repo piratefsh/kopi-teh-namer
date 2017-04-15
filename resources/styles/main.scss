@@ -207,6 +207,16 @@ input[type=radio] + label {
 
 }
 
+footer{
+  background-color: lighten($bg-color, 10%);
+  margin-top: $space * 3;
+  padding: $space * 1;
+  font-size: 0.8em;
+  a {
+    color: lighten($secondary-color, 20%);
+  }
+}
+
 .hide-defaults {
   position: absolute;
   top: 0;
