@@ -19,6 +19,10 @@ class Drink {
     this.parts = Object.keys(this.partsById).map((k) => this.partsById[k])
   }
 
+  get(part){
+    return this.partsById[part];
+  }
+
   labels() {
     return this.parts.map((i) => i.label);
   }

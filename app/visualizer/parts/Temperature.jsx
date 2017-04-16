@@ -12,34 +12,47 @@ class Temperature extends React.Component {
   }
 
   makeStyle(props = this.props) {
-    if (props.temperature == 'hot') {
-      return {
+    const common = {
+      width: `${props.width}px`,
+      height: `${props.height}px`,
+      display: 'block',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      position: 'relative',
+      backgroundSize: 'contain',
+    };
+
+    let temp = {};
+
+    if (props.temperature === 'hot') {
+      temp = {
         backgroundImage: `url(${steamUrl})`,
-        width: '30px',
-        height: '15px',
-        display: 'block',
         marginTop: '-16px',
-        backgroundSize: 'contain',
       };
-    } else if (props.temperature == 'cold') {
-      return {
+    } else if (props.temperature === 'cold') {
+      temp = {
         backgroundImage: `url(${iceUrl})`,
-        width: '30px',
-        height: '15px',
         marginTop: '6px',
-        display: 'block',
-        backgroundSize: 'contain',
       };
     }
-
-    return {};
+    return Object.assign(temp, common);
   }
 
   render() {
-    return (<div className="temperature">
+    return (<div className="temperature"
+      style={{
+        marginTop: `${this.props.offsetTop}px`,
+        width: '100%'
+      }}>
       <span style={this.makeStyle()} />
     </div>);
   }
 }
+
+Temperature.defaultProps = {
+  width: 30,
+  height: 15,
+  offsetTop: 0,
+};
 
 export default Temperature;

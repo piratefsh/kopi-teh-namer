@@ -36,7 +36,7 @@ class DrinkDisplay extends React.Component {
     return (
       <header>
         <div className="container">
-          <DrinkVisualizer className='inline-block va-middle' {...this.props}/>
+          <DrinkVisualizer className='drink inline-block va-middle' {...this.props}/>
           <div className='inline-block va-middle'>{
           this.props.drink
             .parts

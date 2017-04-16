@@ -15,13 +15,18 @@ $bg-color: #1D2A3A;
   text-transform: uppercase;
 }
 
-.inline-block{
+.inline-block {
   display: inline-block;
 }
 
-.va-middle{
+.va-middle {
   vertical-align: middle;
 }
-.va-bottom{
+
+.va-bottom {
   vertical-align: bottom;
+}
+
+.pos-relative {
+  position: relative;
 }

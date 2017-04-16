@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import backgroundUrl from 'images/liquid-bg-nopadding.svg';
 import PropertyConstants from 'constants/PropertyConstants';
 import Liquid from './parts/Liquid';
+import Temperature from './parts/Temperature';
 import glassCupUrl from 'images/Drink_Hot_HavingHere.svg';
 import takeAwayCupUrl from 'images/Drink_Iced_Takeaway.svg';
 
@@ -21,36 +22,39 @@ class DrinkVisualizer extends React.Component {
   }
 
   getLiquids() {
-    let prevHeight = 0;
+    let prevHeight = 5;
     const WEIGHTS = [1, 2, 2.5, 1];
     const HEIGHT_UNIT = 10;
     const scale = 0.7;
+    const drink = this.props.drink;
     return ['sweetness', 'milk', 'base', 'dilution'].map((part, i) => {
       const maxHeight = WEIGHTS[i] * HEIGHT_UNIT;
       const sizes = PropertyConstants.SIZES[part];
-      const height = sizes[this.props.drink.partsById[part].id] / Math.max(...sizes) * maxHeight;
+      const height = sizes[drink.get(part).id] / Math.max(...sizes) * maxHeight;
       const liquid = (<Liquid
         scale={scale}
         key={i}
         color={
-              PropertyConstants.COLORS[part][this.props.drink.partsById[part].id]}
+              PropertyConstants.COLORS[part][drink.get(part).id]}
         size={height}
         offsetBottom={prevHeight}
       />);
       prevHeight = height + prevHeight;
+      this.state.liquidHeight = prevHeight;
       return liquid;
     });
   }
   render() {
-    const cup = [glassCupUrl, takeAwayCupUrl][this.props.drink.partsById.togo.id];
+    const cup = [glassCupUrl, takeAwayCupUrl][this.props.drink.get('togo').id];
+    const temp = PropertyConstants.TEMPS[this.props.drink.get('temperature').id];
 
     return (<div className={this.props.className}>
       <div
-        className="liquid-container" >
+        className="liquid-container"
+      >
         <img
           src={cup}
           style={this.state.style}
-          className={this.props.className}
         />
         <div
           style={{
@@ -61,6 +65,19 @@ class DrinkVisualizer extends React.Component {
         >
           {this.getLiquids()}
         </div>
+      </div>
+      <div
+        className="pos-relative"
+        style={{
+          zIndex: 3,
+        }}
+      >
+        <Temperature
+          temperature={temp}
+          width={50}
+          height={25}
+          offsetTop={-this.state.liquidHeight - 25/2}
+        />
       </div>
     </div>);
   }
