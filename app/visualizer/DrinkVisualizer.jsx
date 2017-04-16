@@ -13,7 +13,7 @@ class DrinkVisualizer extends React.Component {
     super(props);
     this.state = {
       style: {
-        width: '88px',
+        width: '89px',
         opacity: 1,
         position: 'relative',
         bottom: 0,

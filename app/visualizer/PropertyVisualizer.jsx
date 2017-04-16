@@ -12,7 +12,8 @@ class PropertyVisualizer extends React.Component {
     super(props);
     this.state = {
       style: {
-        width: '35px',
+        width: '36px',
+        opacity: props.label == 'togo' ? 0 : 1,
       },
       color: this.getColor(props.selected),
     };
@@ -55,11 +56,11 @@ class PropertyVisualizer extends React.Component {
     if (this.isLiquid()) {
       return (
         <div style={{
-          transform: 'perspective(120px) rotateX(-36deg) ',
+          transform: 'perspective(120px) rotateX(-40deg) ',
         }}>
           <Liquid
           scale={0.5}
-          offsetBottom={0.5}
+          offsetBottom={1}
           color={this.getColor()}
           size={this.getSize()}
         />
