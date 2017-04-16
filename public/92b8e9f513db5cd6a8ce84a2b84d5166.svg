@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="490px" viewBox="0 0 400 490" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Drink_Hot_Takeaway</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="200" cy="197" rx="150" ry="25"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="300" height="50" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <polyline id="path-3" points="50 197 50 149 350 149 350 197"></polyline>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="300" height="48" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <ellipse id="path-5" cx="200" cy="149" rx="150" ry="25"></ellipse>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="300" height="50" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+    </defs>
+    <g id="Assets-For-Sher-Minn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Drink_Hot_Takeaway" stroke="#A9DBD6" fill="#85C0BA">
+            <path d="M335.504828,197.237253 C327.446239,282.389668 319.387339,367.545382 311.328595,452.699446 C311.328595,463.841297 259.758764,489.711912 199.790133,489.504819 C138.89992,489.294544 88.2516718,463.841297 88.2516718,452.699446 C88.2516718,452.699446 73.9034623,301.086699 64.0000143,196.440265 C63.9281269,195.680655 335.6335,195.877618 335.504828,197.237253 Z" id="Cup_Takeaway_Body" stroke-width="5"></path>
+            <use id="Cup_Takeaway_Mouth_Base" mask="url(#mask-2)" stroke-width="10" xlink:href="#path-1"></use>
+            <use id="Cup_Takeaway_Mouth_Body" mask="url(#mask-4)" stroke-width="10" xlink:href="#path-3"></use>
+            <use id="Cup_Takeaway_Mouth_Surface" mask="url(#mask-6)" stroke-width="10" xlink:href="#path-5"></use>
+        </g>
+    </g>
+</svg>
