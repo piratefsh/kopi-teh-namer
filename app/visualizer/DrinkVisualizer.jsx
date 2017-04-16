@@ -17,7 +17,7 @@ class DrinkVisualizer extends React.Component {
   getLiquids() {
     let prevHeight = 0;
     const WEIGHTS = [1, 2, 2.5, 1];
-    const HEIGHT_UNIT = 8;
+    const HEIGHT_UNIT = 6;
     return ['sweetness', 'milk', 'base', 'dilution'].map((part, i) => {
       const maxHeight = WEIGHTS[i] * HEIGHT_UNIT;
       const sizes = PropertyConstants.SIZES[part];
@@ -40,6 +40,7 @@ class DrinkVisualizer extends React.Component {
         className="liquid-container" style={{
           transform: 'scale(1.75)',
           marginRight: '32px',
+          marginTop: '16px'
         }}
       >
         <div
