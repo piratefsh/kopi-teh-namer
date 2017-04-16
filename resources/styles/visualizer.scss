@@ -1,9 +1,6 @@
 @import 'constants';
 
 .liquid-container{
-  @media(max-width: 480px){
-    display: none;
-  }
 
   position: relative;
   display: inline-block;

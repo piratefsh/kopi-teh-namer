@@ -462,9 +462,6 @@ template {
 .liquid-container {
   position: relative;
   display: inline-block; }
-  @media (max-width: 480px) {
-    .liquid-container {
-      display: none; } }
   .liquid-container img {
     position: relative;
     z-index: 3; }
