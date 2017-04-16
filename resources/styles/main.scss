@@ -8,10 +8,10 @@ body {
   font-family: Helvetica;
   margin: 0;
   padding: 0;
-  padding-top: $header-height + 16px;
+  padding-bottom: $header-height;
 
   @media(max-width: 480px) {
-    padding-top: $header-height-sm + 16px;
+    padding-bottom: $header-height-sm;
   }
 }
 
@@ -28,7 +28,7 @@ header {
   height: $header-height;
   padding: $space * 2 0;
   position: fixed;
-  top: 0;
+  bottom: 0;
   width: 100%;
   z-index: 9;
 
