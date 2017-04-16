@@ -15,6 +15,7 @@ class DrinkVisualizer extends React.Component {
   }
 
   render(){
+    console.log(this.props.drink.partsById)
     return(<div className='inline-block'>
       <div className='liquid-container' style={{
         transform: 'scale(1.75)',
@@ -24,19 +25,25 @@ class DrinkVisualizer extends React.Component {
           transform: 'translateY(50px) perspective(120px) rotateX(-40deg) ',
         }}>
           <Liquid
-            color={PropertyConstants.COLORS.sweetness[3]}
+            color={PropertyConstants.COLORS.sweetness[this.props.drink.partsById.sweetness.id]}
             size={5}
             offsetBottom={0}
           />
           <Liquid
-            color={PropertyConstants.COLORS.milk[1]}
+            color={PropertyConstants.COLORS.milk[this.props.drink.partsById.milk.id]}
             size={10}
             offsetBottom={5}
           />
+
           <Liquid
-            color={PropertyConstants.COLORS.base[0]}
+            color={PropertyConstants.COLORS.base[this.props.drink.partsById.base.id]}
             offsetBottom={10}
-            size={25}
+            size={16}
+          />
+           <Liquid
+            color={PropertyConstants.COLORS.dilution[this.props.drink.partsById.dilution.id]}
+            offsetBottom={30}
+            size={5}
           />
         </div>
         <img

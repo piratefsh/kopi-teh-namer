@@ -6,24 +6,17 @@ Array.prototype.clean = function clean() {
 
 class Drink {
   constructor({ base, milk, dilution, temperature, sweetness, togo, order }) {
-    this.parts = [
-      new DrinkProperty(base, 'base'),
-      new DrinkProperty(milk, 'milk'),
-      new DrinkProperty(dilution, 'dilution'),
-      new DrinkProperty(temperature, 'temperature'),
-      new DrinkProperty(sweetness, 'sweetness'),
-      new DrinkProperty(togo, 'togo'),
-      new DrinkProperty(order, 'order')];
-
     this.partsById = {
-      base: this.parts[1],
-      milk: this.parts[2],
-      dilution: this.parts[3],
-      temperature: this.parts[4],
-      sweetness: this.parts[5],
-      togo: this.parts[6],
-      order: this.parts[7],
+      base: new DrinkProperty(base, 'base'),
+      milk: new DrinkProperty(milk, 'milk'),
+      dilution: new DrinkProperty(dilution, 'dilution'),
+      temperature: new DrinkProperty(temperature, 'temperature'),
+      sweetness: new DrinkProperty(sweetness, 'sweetness'),
+      togo: new DrinkProperty(togo, 'togo'),
+      order: new DrinkProperty(order, 'order'),
     }
+
+    this.parts = Object.keys(this.partsById).map((k) => this.partsById[k])
   }
 
   labels() {
