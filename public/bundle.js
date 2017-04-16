@@ -24292,7 +24292,8 @@
 	    _get(Object.getPrototypeOf(PropertyVisualizer.prototype), 'constructor', this).call(this, props);
 	    this.state = {
 	      style: {
-	        width: '35px'
+	        width: '36px',
+	        opacity: props.label == 'togo' ? 0 : 1
 	      },
 	      color: this.getColor(props.selected)
 	    };
@@ -24348,6 +24349,7 @@
 	            } },
 	          _react2['default'].createElement(_partsLiquid2['default'], {
 	            scale: 0.5,
+	            offsetBottom: 1,
 	            color: this.getColor(),
 	            size: this.getSize()
 	          })
@@ -25582,7 +25584,7 @@
 	    _get(Object.getPrototypeOf(DrinkVisualizer.prototype), 'constructor', this).call(this, props);
 	    this.state = {
 	      style: {
-	        width: '90px',
+	        width: '89px',
 	        opacity: 1,
 	        position: 'relative',
 	        bottom: 0,
@@ -25596,7 +25598,7 @@
 	    value: function getLiquids() {
 	      var _this = this;
 
-	      var prevHeight = 5;
+	      var prevHeight = 6;
 	      var drink = this.props.drink;
 	      var scale = 0.7;
 	      var WEIGHTS = [1, 1.8, 3, 0.8];
@@ -25655,7 +25657,7 @@
 	              style: {
 	                position: 'relative',
 	                zIndex: 2,
-	                transform: 'perspective(120px) rotateX(-40deg) '
+	                transform: 'perspective(120px) rotateX(-36deg) '
 	              }
 	            },
 	            this.getLiquids()
