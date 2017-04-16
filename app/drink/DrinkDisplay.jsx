@@ -1,21 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DrinkVisualizer from 'visualizer/DrinkVisualizer';
-
-function DrinkDisplayPart(props) {
-  if (props.hideDefault && !props.part.label) {
-    return null;
-  }
-  return (<div className="part" tabIndex="0">
-    <div>{props.part.label || <div className="default"><br /></div>}</div>
-    <div>{props.part.definition || <br />}</div>
-
-    <div className="part-type">
-    <span><strong>{props.part.type}</strong></span>
-    </div>
-  </div>);
-}
-
+import DrinkName from './DrinkName';
 class DrinkDisplay extends React.Component {
   constructor(props) {
     super(props);
@@ -36,16 +22,8 @@ class DrinkDisplay extends React.Component {
     return (
       <header>
         <div className="container">
-          <DrinkVisualizer className='drink inline-block va-middle' {...this.props}/>
-          <div className='inline-block va-middle'>{
-          this.props.drink
-            .parts
-            .map((part, i) => (<DrinkDisplayPart
-              key={i}
-              part={part}
-              hideDefault={this.state.hideDefaults}
-            />))
-        }</div>
+          <DrinkVisualizer className='drink' {...this.props}/>
+          <DrinkName {...this.props} hideDefaults={this.state.hideDefaults}/>
 
           <span className="fieldset-sm hide-defaults">
             <input
@@ -62,11 +40,6 @@ class DrinkDisplay extends React.Component {
 
 DrinkDisplay.propTypes = {
   drink: PropTypes.object.isRequired,
-};
-
-DrinkDisplayPart.propTypes = {
-  part: PropTypes.object.isRequired,
-  hideDefault: PropTypes.bool.isRequired,
 };
 
 export default DrinkDisplay;
