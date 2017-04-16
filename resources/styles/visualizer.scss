@@ -3,6 +3,7 @@
 .liquid-container{
   position: relative;
   display: inline-block;
+
   img{
     position: relative;
     z-index: 3;
@@ -13,24 +14,22 @@
   }
 }
 
-.temperature{
+.temperature {
   position: absolute;
   top: 0;
 }
 
-.num-order{
+.num-order {
   position: relative;
 }
 
-.liquid{
+.liquid {
   bottom: -5px;
   color: white;
   font-size: 0.5em;
   left: 50%;
   position: absolute;
-  text-align: center;
   transform: translatex(-50%);
-  width: 30px;
   z-index: 0;
 
   span {
@@ -64,12 +63,13 @@
     left: 0px;
     z-index: 4;
     transform: rotate(-6deg) translatex(-8px);
+    // background-color: rgba($white, 0.4);
     background-color: rgba($bg-color, 1);
   }
 
   &:after {
     right: 0px;
     left: auto;
-    transform: rotate(6deg) translatex(9px);
+    transform: rotate(6deg) translatex(8px);
   }
 }

@@ -23,8 +23,8 @@ class TakeAway extends React.Component {
     return {
       width: '54px',
       position: 'absolute',
-      left: '-11px',
-      top: '-18px',
+      left: '-9px',
+      top: '-15px',
     };
   }
 

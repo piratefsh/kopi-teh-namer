@@ -17,7 +17,7 @@ class Liquid extends React.Component {
   }
 
   getTopWidth(height=0, maxHeight=30){
-    const n = 24 + 6 * (height/maxHeight)
+    const n = 26 + 6 * (height/maxHeight)
     return `${n}px`
   }
   makeStyle(props){
@@ -41,13 +41,13 @@ class Liquid extends React.Component {
       },
       middle: {
         backgroundColor: color,
-        width: '30px',
+        width: '32px',
         height: `${props.size || 0}px`,
       },
       bottom: {
         position: 'relative',
         bottom: '6px',
-        width: '24px',
+        width: '26px',
         height: '10px',
         borderRadius: '50%',
         backgroundColor: color,
@@ -56,7 +56,7 @@ class Liquid extends React.Component {
   }
 
   render() {
-    return (<div className="liquid">
+    return (<div className="liquid" style={{width: '32px'}}>
       <span className="top" style={this.state.style.top} />
       <span className="middle" style={this.state.style.middle} />
       <span className="bottom" style={this.state.style.bottom} />

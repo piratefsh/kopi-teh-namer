@@ -12,7 +12,7 @@ class PropertyVisualizer extends React.Component {
     super(props);
     this.state = {
       style: {
-        width: '34px',
+        width: '35px',
       },
       color: this.getColor(props.selected),
     };
@@ -77,8 +77,7 @@ class PropertyVisualizer extends React.Component {
   render() {
     return (
       <div className="liquid-container">
-        {this.getVisualType()}
-        <img
+        {this.getVisualType()}<img
           src={backgroundUrl}
           style={this.state.style}
           className={this.props.className}
