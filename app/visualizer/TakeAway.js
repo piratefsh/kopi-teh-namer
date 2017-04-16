@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Utils from 'Utils';
 import glassCupUrl from 'images/Drink_Hot_HavingHere.svg';
 import takeAwayCupUrl from 'images/Drink_Iced_Takeaway.svg';
 

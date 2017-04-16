@@ -1,4 +1,4 @@
-import DrinkProperty from 'DrinkProperty';
+import DrinkProperty from './DrinkProperty';
 
 Array.prototype.clean = function clean() {
   return this.filter((e) => e && e.length > 0);

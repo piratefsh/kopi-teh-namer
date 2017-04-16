@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Utils from 'Utils';
+import Utils from 'util/Utils';
 
 class Liquid extends React.Component {
   constructor(props) {

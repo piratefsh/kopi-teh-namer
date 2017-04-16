@@ -1,9 +1,9 @@
 import React from 'react';
 import VariationSelector from './VariationSelector';
-import Constants from './Constants';
-import Drink from './Drink';
-import DrinkDisplay from './DrinkDisplay';
-import Utils from './Utils';
+import Constants from 'constants/Constants';
+import Drink from 'drink/Drink';
+import DrinkDisplay from 'drink/DrinkDisplay';
+import Utils from 'util/Utils';
 
 class DrinkOrder extends React.Component {
   constructor(props) {

@@ -2,7 +2,6 @@ import iceUrl from 'images/Liquid_Temperature_Iced.svg';
 import steamUrl from 'images/hot-steam.svg';
 import React from 'react';
 import PropTypes from 'prop-types';
-import Utils from 'Utils';
 
 class Temperature extends React.Component {
   constructor(props) {

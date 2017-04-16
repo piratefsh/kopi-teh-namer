@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PropertyVisualizer from './visualizer/PropertyVisualizer';
+import PropertyVisualizer from 'visualizer/PropertyVisualizer';
 
 class VariationSelector extends React.Component {
   constructor(props) {
