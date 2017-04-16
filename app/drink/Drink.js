@@ -24,7 +24,7 @@ class Drink {
   }
 
   isTall() {
-    return this.isCold() || this.isTakeAway();
+    return this.isCold();
   }
 
   isTakeAway() {

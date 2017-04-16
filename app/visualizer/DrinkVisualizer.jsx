@@ -26,7 +26,7 @@ class DrinkVisualizer extends React.Component {
     let prevHeight = 5;
     const drink = this.props.drink;
     const scale = 0.7;
-    const WEIGHTS = [1, 2, 3, 1];
+    const WEIGHTS = [1, 1.8, 3, 0.8];
     const LIQUIDS = ['sweetness', 'milk', 'base', 'dilution'];
     const heightUnit = drink.isTall() ? 13 : 10;
 

@@ -25317,7 +25317,7 @@
 	  }, {
 	    key: 'isTall',
 	    value: function isTall() {
-	      return this.isCold() || this.isTakeAway();
+	      return this.isCold();
 	    }
 	  }, {
 	    key: 'isTakeAway',
@@ -25599,7 +25599,7 @@
 	      var prevHeight = 5;
 	      var drink = this.props.drink;
 	      var scale = 0.7;
-	      var WEIGHTS = [1, 2, 3, 1];
+	      var WEIGHTS = [1, 1.8, 3, 0.8];
 	      var LIQUIDS = ['sweetness', 'milk', 'base', 'dilution'];
 	      var heightUnit = drink.isTall() ? 13 : 10;
 
