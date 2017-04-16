@@ -22767,7 +22767,6 @@
 	      return _react2['default'].createElement(
 	        'div',
 	        null,
-	        _react2['default'].createElement(_drinkDrinkDisplay2['default'], { drink: this.state.drink }),
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'container' },
@@ -22776,7 +22775,8 @@
 	            null,
 	            this.getSelectors()
 	          )
-	        )
+	        ),
+	        _react2['default'].createElement(_drinkDrinkDisplay2['default'], { drink: this.state.drink })
 	      );
 	    }
 	  }]);

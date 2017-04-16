@@ -67,12 +67,12 @@ class DrinkOrder extends React.Component {
 
   render() {
     return (<div>
-      <DrinkDisplay drink={this.state.drink} />
       <div className="container">
         <form>
           {this.getSelectors()}
         </form>
       </div>
+      <DrinkDisplay drink={this.state.drink} />
     </div>);
   }
 }
