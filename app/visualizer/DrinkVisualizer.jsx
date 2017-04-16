@@ -23,7 +23,7 @@ class DrinkVisualizer extends React.Component {
   }
 
   getLiquids() {
-    let prevHeight = 6;
+    let prevHeight = 7;
     const drink = this.props.drink;
     const scale = 0.7;
     const WEIGHTS = [1, 1.8, 3, 0.8];

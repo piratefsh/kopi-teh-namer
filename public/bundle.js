@@ -25598,7 +25598,7 @@
 	    value: function getLiquids() {
 	      var _this = this;
 
-	      var prevHeight = 6;
+	      var prevHeight = 7;
 	      var drink = this.props.drink;
 	      var scale = 0.7;
 	      var WEIGHTS = [1, 1.8, 3, 0.8];
