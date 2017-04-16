@@ -25317,7 +25317,7 @@
 	  }, {
 	    key: 'isTall',
 	    value: function isTall() {
-	      return this.isCold() && this.isTakeAway();
+	      return this.isCold() || this.isTakeAway();
 	    }
 	  }, {
 	    key: 'isTakeAway',
