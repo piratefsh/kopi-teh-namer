@@ -3,13 +3,19 @@ import PropTypes from 'prop-types';
 import backgroundUrl from 'images/liquid-bg-nopadding.svg';
 import PropertyConstants from 'constants/PropertyConstants';
 import Liquid from './parts/Liquid';
+import glassCupUrl from 'images/Drink_Hot_HavingHere.svg';
+import takeAwayCupUrl from 'images/Drink_Iced_Takeaway.svg';
 
 class DrinkVisualizer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       style: {
-        width: '35px',
+        width: '58px',
+        opacity: 1,
+        position: 'relative',
+        bottom: 0,
+        zIndex: 1,
       },
     };
   }
@@ -35,26 +41,30 @@ class DrinkVisualizer extends React.Component {
   }
   render() {
     console.log(this.props.drink.partsById);
-    return (<div className="inline-block">
+    const cup = [glassCupUrl, takeAwayCupUrl][this.props.drink.partsById.togo.id];
+
+    return (<div className={this.props.className}>
       <div
         className="liquid-container" style={{
-          transform: 'scale(1.75)',
+          transform: 'scale(1.6)',
           marginRight: '32px',
-          marginTop: '16px'
+          transformOrigin: 'center bottom',
         }}
       >
+        <img
+          src={cup}
+          style={this.state.style}
+          className={this.props.className}
+        />
         <div
           style={{
-            transform: 'translateY(50px) perspective(120px) rotateX(-40deg) ',
+            position: 'relative',
+            zIndex: 2,
+            transform: 'translateY(-5px) perspective(120px) rotateX(-40deg) ',
           }}
         >
           {this.getLiquids()}
         </div>
-        <img
-          src={backgroundUrl}
-          style={this.state.style}
-          className={this.props.className}
-        />
       </div>
     </div>);
   }

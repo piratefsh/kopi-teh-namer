@@ -2,7 +2,26 @@ $space: 8px;
 $white: #ffffff;
 $grey: #bbbbba;
 $skyblue: #b6e8d9;
-$header-height: 120px;
+$header-height: 140px;
 $header-height-sm: 148px;
 $secondary-color: #5a58a3;
 $bg-color: #1D2A3A;
+
+.right {
+  float: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.va-middle{
+  vertical-align: middle;
+}
+.va-bottom{
+  vertical-align: bottom;
+}
