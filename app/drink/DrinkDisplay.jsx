@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DrinkVisualizer from 'visualizer/DrinkVisualizer';
 
 function DrinkDisplayPart(props) {
   if (props.hideDefault && !props.part.label) {
@@ -35,7 +36,8 @@ class DrinkDisplay extends React.Component {
     return (
       <header>
         <div className="container">
-          <div>{
+          <DrinkVisualizer {...this.props}/>
+          <div className='inline-block'>{
           this.props.drink
             .parts
             .map((part, i) => (<DrinkDisplayPart

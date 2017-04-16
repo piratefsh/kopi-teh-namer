@@ -53,10 +53,15 @@ class PropertyVisualizer extends React.Component {
 
   getVisualType() {
     if (this.isLiquid()) {
-      return (<Liquid
-        color={this.getColor()}
-        size={this.getSize()}
-      />);
+      return (
+        <div style={{
+          transform: 'translateY(50px) perspective(120px) rotateX(-40deg) ',
+        }}>
+          <Liquid
+          color={this.getColor()}
+          size={this.getSize()}
+        />
+        </div>);
     } else if (this.isTemperature()) {
       const temp = PropertyConstants.TEMPS[this.props.selected];
       return (<Temperature
@@ -77,7 +82,8 @@ class PropertyVisualizer extends React.Component {
   render() {
     return (
       <div className="liquid-container">
-        {this.getVisualType()}<img
+        {this.getVisualType()}
+        <img
           src={backgroundUrl}
           style={this.state.style}
           className={this.props.className}

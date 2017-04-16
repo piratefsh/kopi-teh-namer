@@ -46,9 +46,9 @@ class Liquid extends React.Component {
       },
       bottom: {
         position: 'relative',
-        bottom: '6px',
+        bottom: '4px',
         width: '26px',
-        height: '14px',
+        height: '8px',
         borderRadius: '50%',
         backgroundColor: color,
       },
@@ -58,7 +58,7 @@ class Liquid extends React.Component {
   getLiquidStyle() {
     return {
       width: '32px',
-      transform: 'translateX(-16px) perspective(120px) rotateX(-40deg) ',
+      bottom: `${this.props.offsetBottom}px`
     };
   }
 

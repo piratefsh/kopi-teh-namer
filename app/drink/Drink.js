@@ -14,6 +14,16 @@ class Drink {
       new DrinkProperty(sweetness, 'sweetness'),
       new DrinkProperty(togo, 'togo'),
       new DrinkProperty(order, 'order')];
+
+    this.partsById = {
+      base: this.parts[1],
+      milk: this.parts[2],
+      dilution: this.parts[3],
+      temperature: this.parts[4],
+      sweetness: this.parts[5],
+      togo: this.parts[6],
+      order: this.parts[7],
+    }
   }
 
   labels() {
