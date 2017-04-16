@@ -462,6 +462,9 @@ template {
 .liquid-container {
   position: relative;
   display: inline-block; }
+  @media (max-width: 480px) {
+    .liquid-container {
+      display: none; } }
   .liquid-container img {
     position: relative;
     z-index: 3; }
@@ -481,9 +484,7 @@ template {
   font-size: 0.5em;
   left: 50%;
   position: absolute;
-  text-align: center;
   transform: translatex(-50%);
-  width: 30px;
   z-index: 0; }
   .liquid span {
     display: block;
@@ -498,21 +499,6 @@ template {
     .liquid span.bottom {
       z-index: 1;
       transition: background-color 0.6s 0.2s, height 0.3s; }
-  .liquid:before, .liquid:after {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 10px;
-    height: 40px;
-    bottom: 0;
-    left: 0px;
-    z-index: 4;
-    transform: rotate(-6deg) translatex(-8px);
-    background-color: #1d2a3a; }
-  .liquid:after {
-    right: 0px;
-    left: auto;
-    transform: rotate(6deg) translatex(7px); }
 
 body {
   color: #ffffff;
@@ -706,3 +692,6 @@ footer {
 
 .uppercase {
   text-transform: uppercase; }
+
+.inline-block {
+  display: inline-block; }
