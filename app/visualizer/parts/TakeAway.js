@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import glassCupUrl from 'images/Drink_Hot_HavingHere.svg';
-import takeAwayCupUrl from 'images/Drink_Iced_Takeaway.svg';
+import takeAwayColdUrl from 'images/Drink_Iced_Takeaway.svg';
+import takeAwayHotUrl from 'images/Drink_Hot_Takeaway.svg';
 
 class TakeAway extends React.Component {
   constructor(props) {
@@ -12,8 +13,11 @@ class TakeAway extends React.Component {
   }
 
   getImage(){
+    if(this.props.cold){
+      return takeAwayColdUrl;
+    }
     if(this.props.takeaway){
-      return takeAwayCupUrl;
+      return takeAwayHotUrl;
     }
     return glassCupUrl;
   }

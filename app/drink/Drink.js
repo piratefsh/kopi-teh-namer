@@ -24,7 +24,15 @@ class Drink {
   }
 
   isTall() {
+    return this.isCold() && this.isTakeAway();
+  }
+
+  isTakeAway() {
     return this.get('togo').id === 1;
+  }
+
+  isCold() {
+    return this.get('temperature').id === 1;
   }
 
   labels() {

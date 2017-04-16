@@ -5,7 +5,8 @@ import PropertyConstants from 'constants/PropertyConstants';
 import Liquid from './parts/Liquid';
 import Temperature from './parts/Temperature';
 import glassCupUrl from 'images/Drink_Hot_HavingHere.svg';
-import takeAwayCupUrl from 'images/Drink_Iced_Takeaway.svg';
+import takeAwayColdUrl from 'images/Drink_Iced_Takeaway.svg';
+import takeAwayHotUrl from 'images/Drink_Hot_Takeaway.svg';
 
 class DrinkVisualizer extends React.Component {
   constructor(props) {
@@ -47,8 +48,20 @@ class DrinkVisualizer extends React.Component {
       return liquid;
     });
   }
+
+  getCup(){
+    if(this.props.drink.isCold()){
+      return takeAwayColdUrl
+    }
+    else{
+      if(this.props.drink.isTakeAway()){
+        return takeAwayHotUrl
+      }
+      return glassCupUrl
+    }
+  }
   render() {
-    const cup = [glassCupUrl, takeAwayCupUrl][this.props.drink.get('togo').id];
+    const cup = this.getCup();
     const temp = PropertyConstants.TEMPS[this.props.drink.get('temperature').id];
 
     return (<div className={this.props.className}>
