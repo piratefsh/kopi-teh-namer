@@ -26,14 +26,14 @@ header {
   box-shadow: 0 0 3px darken($secondary-color, 30%);
   box-sizing: border-box;
   height: $header-height;
-  padding: $space * 3 $space;
+  padding: $space * 2 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 9;
 
   @media(max-width: 480px) {
-    padding: $space*2 $space;
+    padding: $space 0;
 
     height: $header-height-sm;
   }

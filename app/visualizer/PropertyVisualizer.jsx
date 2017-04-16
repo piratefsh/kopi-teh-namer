@@ -58,6 +58,7 @@ class PropertyVisualizer extends React.Component {
           transform: 'translateY(50px) perspective(120px) rotateX(-40deg) ',
         }}>
           <Liquid
+          scale={0.5}
           color={this.getColor()}
           size={this.getSize()}
         />

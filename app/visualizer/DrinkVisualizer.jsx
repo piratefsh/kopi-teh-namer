@@ -11,7 +11,7 @@ class DrinkVisualizer extends React.Component {
     super(props);
     this.state = {
       style: {
-        width: '58px',
+        width: '100px',
         opacity: 1,
         position: 'relative',
         bottom: 0,
@@ -46,9 +46,7 @@ class DrinkVisualizer extends React.Component {
     return (<div className={this.props.className}>
       <div
         className="liquid-container" style={{
-          transform: 'scale(1.6)',
           marginRight: '32px',
-          transformOrigin: 'center bottom',
         }}
       >
         <img
