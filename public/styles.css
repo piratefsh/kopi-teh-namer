@@ -496,8 +496,9 @@ template {
   position: relative; }
 
 .liquid-container {
+  display: inline-block;
   position: relative;
-  display: inline-block; }
+  transform: translate3d(0, 0, 0); }
   .liquid-container img {
     position: relative;
     z-index: 3; }
