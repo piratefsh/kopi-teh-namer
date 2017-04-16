@@ -79,7 +79,7 @@ const COLORS = {
 };
 
 const SIZES = {
-  base: [50, 50],
+  base: [60, 60],
   milk: [0, 20, 30],
   sweetness: [0, 5, 10, 15, 20],
   dilution: [0, 5, 10, 20],

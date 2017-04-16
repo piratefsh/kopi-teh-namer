@@ -19,8 +19,12 @@ class Drink {
     this.parts = Object.keys(this.partsById).map((k) => this.partsById[k])
   }
 
-  get(part){
+  get(part) {
     return this.partsById[part];
+  }
+
+  isTall() {
+    return this.get('togo').id === 1;
   }
 
   labels() {
