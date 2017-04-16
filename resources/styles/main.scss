@@ -32,6 +32,10 @@ header {
   width: 100%;
   z-index: 9;
 
+  .liquid-container{
+    margin-right: 16px;
+  }
+
   @media(max-width: 480px) {
     padding: $space 0;
 

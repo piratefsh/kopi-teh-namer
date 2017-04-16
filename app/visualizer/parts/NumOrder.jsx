@@ -15,7 +15,7 @@ class NumOrder extends React.Component {
       fontSize: '18px',
       display: 'block',
       position: 'absolute',
-      top: '14px',
+      bottom: '14px',
       width: '100%',
     };
   }

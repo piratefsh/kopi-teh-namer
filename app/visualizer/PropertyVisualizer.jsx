@@ -55,7 +55,7 @@ class PropertyVisualizer extends React.Component {
     if (this.isLiquid()) {
       return (
         <div style={{
-          transform: 'translateY(50px) perspective(120px) rotateX(-40deg) ',
+          transform: 'perspective(120px) rotateX(-40deg) ',
         }}>
           <Liquid
           scale={0.5}
@@ -83,12 +83,12 @@ class PropertyVisualizer extends React.Component {
   render() {
     return (
       <div className="liquid-container">
-        {this.getVisualType()}
         <img
           src={backgroundUrl}
           style={this.state.style}
           className={this.props.className}
         />
+        {this.getVisualType()}
       </div>
     );
   }

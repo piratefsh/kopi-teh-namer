@@ -17,12 +17,16 @@ class Liquid extends React.Component {
   }
 
   calcScale(props) {
-    const scale = props.scale || 1;
+    const scale = props.scale;
     const res = {
       width: `${52 * scale}px`,
-      height: `${(props.size || 0) * scale}px`,
+      height: `${(props.size) * scale}px`,
     };
     return res;
+  }
+
+  scale(n) {
+    return Math.round(n * this.props.scale);
   }
 
   makeStyle(props) {
@@ -35,17 +39,14 @@ class Liquid extends React.Component {
     }
 
     const color = Utils.hslCSS(props.color);
-    const scale = this.props.scale || 1;
     const s = this.calcScale(props);
 
     return {
       top: {
-        position: 'relative',
-        top: `${6 * scale}px`,
-        width: s.width,
-        height: `${12 * scale}px`,
-        borderRadius: '50%',
         backgroundColor: Utils.hslCSS(props.color, 10),
+        height: `${this.scale(12)}px`,
+        top: `${this.scale(6)}px`,
+        width: s.width,
       },
       middle: {
         backgroundColor: color,
@@ -53,20 +54,18 @@ class Liquid extends React.Component {
         height: s.height,
       },
       bottom: {
-        position: 'relative',
-        bottom: `${8 * scale}px`,
-        width: s.width,
-        height: `${16 * scale}px`,
-        borderRadius: '50%',
         backgroundColor: color,
+        bottom: `${this.scale(8)}px`,
+        height: `${this.scale(16)}px`,
+        width: s.width,
       },
     };
   }
 
   getLiquidStyle() {
+    const scale = this.props.scale;
     return {
-      width: '60px',
-      bottom: `${this.props.offsetBottom}px`,
+      bottom: `${this.props.offsetBottom * scale}px`,
     };
   }
 
@@ -78,4 +77,17 @@ class Liquid extends React.Component {
     </div>);
   }
 }
+
+Liquid.defaultProps = {
+  scale: 1,
+  size: 0,
+};
+
+Liquid.propTypes = {
+  scale: PropTypes.number,
+  size: PropTypes.number,
+  offsetBottom: PropTypes.number,
+};
+
 export default Liquid;
+

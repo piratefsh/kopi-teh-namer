@@ -11,7 +11,7 @@ class DrinkVisualizer extends React.Component {
     super(props);
     this.state = {
       style: {
-        width: '100px',
+        width: '90px',
         opacity: 1,
         position: 'relative',
         bottom: 0,
@@ -23,12 +23,14 @@ class DrinkVisualizer extends React.Component {
   getLiquids() {
     let prevHeight = 0;
     const WEIGHTS = [1, 2, 2.5, 1];
-    const HEIGHT_UNIT = 6;
+    const HEIGHT_UNIT = 10;
+    const scale = 0.7;
     return ['sweetness', 'milk', 'base', 'dilution'].map((part, i) => {
       const maxHeight = WEIGHTS[i] * HEIGHT_UNIT;
       const sizes = PropertyConstants.SIZES[part];
       const height = sizes[this.props.drink.partsById[part].id] / Math.max(...sizes) * maxHeight;
       const liquid = (<Liquid
+        scale={scale}
         key={i}
         color={
               PropertyConstants.COLORS[part][this.props.drink.partsById[part].id]}
@@ -40,15 +42,11 @@ class DrinkVisualizer extends React.Component {
     });
   }
   render() {
-    console.log(this.props.drink.partsById);
     const cup = [glassCupUrl, takeAwayCupUrl][this.props.drink.partsById.togo.id];
 
     return (<div className={this.props.className}>
       <div
-        className="liquid-container" style={{
-          marginRight: '32px',
-        }}
-      >
+        className="liquid-container" >
         <img
           src={cup}
           style={this.state.style}
@@ -58,7 +56,7 @@ class DrinkVisualizer extends React.Component {
           style={{
             position: 'relative',
             zIndex: 2,
-            transform: 'translateY(-5px) perspective(120px) rotateX(-40deg) ',
+            transform: 'perspective(120px) rotateX(-40deg) ',
           }}
         >
           {this.getLiquids()}
