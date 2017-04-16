@@ -14,37 +14,40 @@ class DrinkVisualizer extends React.Component {
     };
   }
 
-  render(){
-    console.log(this.props.drink.partsById)
-    return(<div className='inline-block'>
-      <div className='liquid-container' style={{
-        transform: 'scale(1.75)',
-        marginRight: '32px'
-      }}>
-        <div style={{
-          transform: 'translateY(50px) perspective(120px) rotateX(-40deg) ',
-        }}>
-          <Liquid
-            color={PropertyConstants.COLORS.sweetness[this.props.drink.partsById.sweetness.id]}
-            size={5}
-            offsetBottom={0}
-          />
-          <Liquid
-            color={PropertyConstants.COLORS.milk[this.props.drink.partsById.milk.id]}
-            size={10}
-            offsetBottom={5}
-          />
-
-          <Liquid
-            color={PropertyConstants.COLORS.base[this.props.drink.partsById.base.id]}
-            offsetBottom={10}
-            size={16}
-          />
-           <Liquid
-            color={PropertyConstants.COLORS.dilution[this.props.drink.partsById.dilution.id]}
-            offsetBottom={30}
-            size={5}
-          />
+  getLiquids() {
+    let prevHeight = 0;
+    const WEIGHTS = [1, 2, 2.5, 1];
+    const HEIGHT_UNIT = 8;
+    return ['sweetness', 'milk', 'base', 'dilution'].map((part, i) => {
+      const maxHeight = WEIGHTS[i] * HEIGHT_UNIT;
+      const sizes = PropertyConstants.SIZES[part];
+      const height = sizes[this.props.drink.partsById[part].id] / Math.max(...sizes) * maxHeight;
+      const liquid = (<Liquid
+        key={i}
+        color={
+              PropertyConstants.COLORS[part][this.props.drink.partsById[part].id]}
+        size={height}
+        offsetBottom={prevHeight}
+      />);
+      prevHeight = height + prevHeight;
+      return liquid;
+    });
+  }
+  render() {
+    console.log(this.props.drink.partsById);
+    return (<div className="inline-block">
+      <div
+        className="liquid-container" style={{
+          transform: 'scale(1.75)',
+          marginRight: '32px',
+        }}
+      >
+        <div
+          style={{
+            transform: 'translateY(50px) perspective(120px) rotateX(-40deg) ',
+          }}
+        >
+          {this.getLiquids()}
         </div>
         <img
           src={backgroundUrl}
@@ -52,7 +55,7 @@ class DrinkVisualizer extends React.Component {
           className={this.props.className}
         />
       </div>
-    </div>)
+    </div>);
   }
 }
 
