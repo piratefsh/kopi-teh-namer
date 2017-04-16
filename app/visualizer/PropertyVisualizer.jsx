@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import backgroundUrl from 'images/liquid-bg-nopadding.svg';
-import PropertyConstants from './PropertyConstants';
-import Liquid from './Liquid';
-import Temperature from './Temperature';
-import TakeAway from './TakeAway';
-import NumOrder from './NumOrder';
+import PropertyConstants from 'constants/PropertyConstants';
+import Liquid from './parts/Liquid';
+import Temperature from './parts/Temperature';
+import TakeAway from './parts/TakeAway';
+import NumOrder from './parts/NumOrder';
 
 class PropertyVisualizer extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import VariationSelector from './VariationSelector';
-import Constants from 'constants/Constants';
+import DrinkConstants from 'constants/DrinkConstants';
 import Drink from 'drink/Drink';
 import DrinkDisplay from 'drink/DrinkDisplay';
 import Utils from 'util/Utils';
@@ -9,7 +9,7 @@ class DrinkOrder extends React.Component {
   constructor(props) {
     super(props);
     // set defaults
-    const order = Utils.getDefaultProps(Constants);
+    const order = Utils.getDefaultProps(DrinkConstants);
     const drink = this.makeDrink(order);
 
     this.state = {
@@ -24,11 +24,11 @@ class DrinkOrder extends React.Component {
     Compose selectors
   **/
   getSelectors() {
-    return Object.keys(Constants).map((key, i) => <VariationSelector
+    return Object.keys(DrinkConstants).map((key, i) => <VariationSelector
       label={key.toLowerCase()}
       key={i}
       value={this.state.order[key]}
-      variations={Constants[key]}
+      variations={DrinkConstants[key]}
       onChange={this.makeUpdateOrder(key)}
     />);
   }
@@ -37,7 +37,7 @@ class DrinkOrder extends React.Component {
     Make drink from order
   **/
   makeDrink(props = this.state.order) {
-    const args = Utils.makeKopiArgs(props, Constants);
+    const args = Utils.makeKopiArgs(props, DrinkConstants);
     return new Drink(args);
   }
 
