@@ -13,7 +13,7 @@ class DrinkVisualizer extends React.Component {
     super(props);
     this.state = {
       style: {
-        width: '90px',
+        width: '88px',
         opacity: 1,
         position: 'relative',
         bottom: 0,
@@ -23,7 +23,7 @@ class DrinkVisualizer extends React.Component {
   }
 
   getLiquids() {
-    let prevHeight = 5;
+    let prevHeight = 6;
     const drink = this.props.drink;
     const scale = 0.7;
     const WEIGHTS = [1, 1.8, 3, 0.8];
@@ -76,7 +76,7 @@ class DrinkVisualizer extends React.Component {
           style={{
             position: 'relative',
             zIndex: 2,
-            transform: 'perspective(120px) rotateX(-40deg) ',
+            transform: 'perspective(120px) rotateX(-36deg) ',
           }}
         >
           {this.getLiquids()}

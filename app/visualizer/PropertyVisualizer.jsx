@@ -55,10 +55,11 @@ class PropertyVisualizer extends React.Component {
     if (this.isLiquid()) {
       return (
         <div style={{
-          transform: 'perspective(120px) rotateX(-40deg) ',
+          transform: 'perspective(120px) rotateX(-36deg) ',
         }}>
           <Liquid
           scale={0.5}
+          offsetBottom={0.5}
           color={this.getColor()}
           size={this.getSize()}
         />
