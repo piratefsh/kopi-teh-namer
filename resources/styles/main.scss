@@ -2,6 +2,7 @@
 @import 'constants';
 @import 'form';
 @import 'visualizer';
+@import 'order';
 
 body {
   background-color: $bg-color;
@@ -18,34 +19,6 @@ body {
   margin: 0 auto;
   max-width: 640px;
   padding: 0 $space * 2;
-}
-
-
-.order {
-  display: flex;
-  @media(max-width: 480px) {
-    display: block;
-  }
-
-  .order-form {
-    flex: 2;
-    max-height: 100vh;
-    overflow-y: scroll;
-    @media(max-width: 480px) {
-    }
-  }
-
-  .order-display {
-    background-color: $secondary-color;
-    flex: 1;
-
-    @media(max-width: 480px) {
-      bottom: 0;
-      position: fixed;
-      width: 100%;
-      z-index: 99;
-    }
-  }
 }
 
 header {

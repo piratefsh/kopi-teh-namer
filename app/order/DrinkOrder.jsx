@@ -1,9 +1,9 @@
 import React from 'react';
-import VariationSelector from './VariationSelector';
 import DrinkConstants from 'constants/DrinkConstants';
 import Drink from 'drink/Drink';
 import DrinkDisplay from 'drink/DrinkDisplay';
 import Utils from 'util/Utils';
+import OrderForm from './OrderForm';
 
 function Footer() {
   return (<footer>
@@ -29,34 +29,6 @@ class DrinkOrder extends React.Component {
   }
 
   /**
-    Compose selectors
-  **/
-  getSelectors() {
-    return Object.keys(DrinkConstants).map((key, i) => <VariationSelector
-      label={key.toLowerCase()}
-      key={i}
-      value={this.state.order[key]}
-      variations={DrinkConstants[key]}
-      onChange={this.makeUpdateOrder(key)}
-    />);
-  }
-
-  /**
-    Make drink from order
-  **/
-  makeDrink(props = this.state.order) {
-    const args = Utils.makeKopiArgs(props, DrinkConstants);
-    return new Drink(args);
-  }
-
-  /**
-    Curry order update function with key
-  **/
-  makeUpdateOrder(key) {
-    return this.updateOrder.bind(null, key);
-  }
-
-  /**
     Update order
   **/
   updateOrder(key, i) {
@@ -73,15 +45,18 @@ class DrinkOrder extends React.Component {
     });
   }
 
+  /**
+    Make drink from order
+  **/
+  makeDrink(props = this.state.order) {
+    const args = Utils.makeKopiArgs(props, DrinkConstants);
+    return new Drink(args);
+  }
+
   render() {
     return (<div className="order">
       <div className="order-form">
-        <div className="container">
-          <h1>How to Kopi</h1>
-          <form>
-            {this.getSelectors()}
-          </form>
-        </div>
+        <OrderForm order={this.state.order} updateOrder={this.updateOrder} />
         <Footer />
       </div>
       <div className="order-display">
