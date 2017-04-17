@@ -1,16 +1,16 @@
 @import 'constants';
 
-.liquid-container{
+.liquid-container {
   display: inline-block;
   position: relative;
   transform: translate3d(0, 0, 0); //fix z-index issue on Safari
 
-  img{
+  img {
     position: relative;
     z-index: 3;
   }
 
-  + .label{
+  + .label {
     margin-left: $space * 2;
   }
 }
@@ -26,34 +26,34 @@
 
 .liquid {
   bottom: -5px;
-  color: white;
-  font-size: 0.5em;
+  color: $white;
+  font-size: .5em;
   left: 50%;
   position: absolute;
   transform: translatex(-50%);
+  transition: bottom .6s;
   z-index: 0;
-  transition: all 0.6s;
 
   span {
     display: block;
     margin: 0 auto;
     position: relative;
-    transition: all 0.6s;
+
     &.top {
-      z-index: 3;
       border-radius: 50%;
-      transition: background-color 0.6s 0s, height 0.3s;
+      transition: background-color .6s 0s, height .3s;
+      z-index: 3;
     }
 
     &.middle {
+      transition: background-color .6s .2s, height .4s;
       z-index: 2;
-      transition: background-color 0.6s 0.2s, height 0.4s;
     }
 
     &.bottom {
-      z-index: 1;
       border-radius: 50%;
-      transition: background-color 0.6s 0.2s, height 0.3s;
+      transition: background-color .6s .2s, height .3s;
+      z-index: 1;
     }
   }
 }

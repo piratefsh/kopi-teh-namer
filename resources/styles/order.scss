@@ -2,7 +2,7 @@
 
 .order {
   display: flex;
-  @media(max-width: 480px) {
+  @media(max-width: $mobile) {
     display: block;
   }
 
@@ -10,14 +10,14 @@
     flex: 2;
     max-height: 100vh;
     overflow-y: scroll;
-    @media(max-width: 480px) {
+    @media(max-width: $mobile) {
     }
   }
 
   .order-display {
     background-color: $secondary-color;
     flex: 1;
-    @media(max-width: 480px) {
+    @media(max-width: $mobile) {
       bottom: 0;
       position: fixed;
       width: 100%;

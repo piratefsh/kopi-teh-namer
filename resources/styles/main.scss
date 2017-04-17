@@ -10,14 +10,14 @@ body {
   font-family: Helvetica;
   margin: 0;
   padding: 0;
-  @media(max-width: 480px) {
+  @media(max-width: $mobile) {
     padding-bottom: $header-height-sm;
   }
 }
 
 .container {
   margin: 0 auto;
-  max-width: 640px;
+  max-width: 600px;
   padding: 0 $space * 2;
 }
 
@@ -29,7 +29,7 @@ header {
 
   .container {
     display: block;
-    @media(max-width: 480px) {
+    @media(max-width: $mobile) {
       display: flex;
       padding-left: 0;
     }
@@ -40,7 +40,7 @@ header {
     margin-bottom: $space * 2;
     margin-right: 16px;
 
-    @media(max-width: 480px) {
+    @media(max-width: $mobile) {
       display: inline-block;
       margin-bottom: 0;
       margin-right: $space;
@@ -53,12 +53,12 @@ header {
     flex: 1;
     flex-flow: row wrap;
     margin-left: $space * 1.5;
-    @media(max-width: 480px) {
+    @media(max-width: $mobile) {
       margin-left: 0;
     }
   }
 
-  @media(max-width: 480px) {
+  @media(max-width: $mobile) {
     height: $header-height-sm;
     padding: $space 0;
   }
@@ -79,7 +79,7 @@ header {
       margin-bottom: $space / 2;
       padding-bottom: $space / 2;
       text-align: center;
-      @media(max-width: 480px) {
+      @media(max-width: $mobile) {
         font-size: 1.2em;
       }
     }
@@ -179,7 +179,7 @@ footer {
     margin-left: $space / 2;
   }
 
-  @media(max-width: 480px) {
+  @media(max-width: $mobile) {
     bottom: 0;
     margin: 8px;
     margin-top: $space;

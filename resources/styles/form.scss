@@ -4,7 +4,7 @@ form {
   display: flex;
   flex-flow: row wrap;
 
-  @media(max-width: 480px) {
+  @media(max-width: $mobile) {
     display: block;
   }
 }
@@ -18,7 +18,7 @@ fieldset {
   padding-right: $space * 3 - $space / 2;
   width: 50%;
 
-  @media(max-width: 480px) {
+  @media(max-width: $mobile) {
     width: 100%;
   }
 }
