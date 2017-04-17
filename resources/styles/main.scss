@@ -3,13 +3,11 @@
 @import 'visualizer';
 
 body {
-  color: $white;
   background-color: $bg-color;
+  color: $white;
   font-family: Helvetica;
   margin: 0;
   padding: 0;
-  padding-bottom: $header-height;
-
   @media(max-width: 480px) {
     padding-bottom: $header-height-sm;
   }
@@ -18,46 +16,76 @@ body {
 .container {
   margin: 0 auto;
   max-width: 640px;
-  padding: 0 $space*2;
+  padding: 0 $space * 2;
+}
+
+
+.order {
+  display: flex;
+  @media(max-width: 480px) {
+    display: block;
+  }
+
+  .order-form {
+    flex: 2;
+    @media(max-width: 480px) {
+    }
+  }
+
+  .order-display {
+    background-color: $secondary-color;
+    flex: 1;
+
+    @media(max-width: 480px) {
+      bottom: 0;
+      position: fixed;
+      width: 100%;
+      z-index: 99;
+    }
+  }
 }
 
 header {
-  background-color: $secondary-color;
-  box-shadow: 0 0 3px darken($secondary-color, 30%);
+  box-shadow: 0 0 5px darken($secondary-color, 30%);
   box-sizing: border-box;
-  height: $header-height;
   padding: $space * 2 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 99;
+  position: relative;
 
   .container {
-    display: flex;
+    display: block;
     @media(max-width: 480px) {
+      display: flex;
       padding-left: 0;
     }
   }
 
   .drink {
+    display: block;
+    margin-bottom: $space * 2;
     margin-right: 16px;
+
     @media(max-width: 480px) {
+      display: inline-block;
+      margin-bottom: 0;
       margin-right: $space;
     }
   }
 
   .drink-name {
-    flex: 1;
-    display: flex;
-    flex-flow: row wrap;
     align-items: center;
+    display: flex;
+    flex: 1;
+    flex-flow: row wrap;
+    margin-left: $space * 1.5;
+    @media(max-width: 480px) {
+      margin-left: 0;
+    }
   }
 
   @media(max-width: 480px) {
-    padding: $space 0;
     height: $header-height-sm;
+    padding: $space 0;
   }
-
 }
 
 form {
@@ -78,29 +106,14 @@ fieldset {
   padding-right: $space * 3 - $space / 2;
   width: 50%;
 
-  .input-group:nth-child(2) {
-    border-width: 50%;
-    padding-top: $space;
-
-    &:before {
-      background-color: lighten($secondary-color, 10%);
-      content: '';
-      display: block;
-      height: 1px;
-      position: relative;
-      top: -$space;
-      width: 80%;
-    }
-  }
-
-  @media(max-width: 480px){
+  @media(max-width: 480px) {
     width: 100%;
   }
 }
 
 .fieldset-sm {
   color: $grey;
-  font-size: 0.8em;
+  font-size: .8em;
 }
 
 label,
@@ -109,7 +122,7 @@ label,
 
   em {
     color: $grey;
-    font-size: 0.8em;
+    font-size: .8em;
   }
 }
 
@@ -127,15 +140,30 @@ input[type=radio] + label {
   padding-right: $space*2;
   vertical-align: middle;
 
+  &:nth-child(2) {
+    border-width: 50%;
+    padding-top: $space;
+
+    &:before {
+      background-color: lighten($secondary-color, 10%);
+      content: '';
+      display: block;
+      height: 1px;
+      position: relative;
+      top: -$space;
+      width: 80%;
+    }
+  }
+
   &.input-group-hoverable {
     > div {
       border-radius: $space / 2;
       padding: $space / 2;
-      transition: all 0.3s;
+      transition: all .3s;
 
       &:hover,
       &:focus {
-       background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, .1);
       }
     }
   }
@@ -162,7 +190,7 @@ input[type=radio] + label {
 
 
   > div {
-    &:first-child{
+    &:first-child {
       border-bottom: 1px dotted darken($secondary-color, 60%);
       font-size: 1.8em;
       margin-bottom: $space / 2;
@@ -174,10 +202,10 @@ input[type=radio] + label {
     }
 
     &:nth-child(2) {
-      user-select: none;
-      font-size: 0.8em;
-      opacity: 0.7;
+      font-size: .8em;
+      opacity: .7;
       text-transform: italic;
+      user-select: none;
     }
   }
 
@@ -201,9 +229,9 @@ input[type=radio] + label {
     box-sizing: border-box;
     color: $grey;
     display: none;
-    font-size: 0.8em;
+    font-size: .8em;
     left: 50%;
-    margin-top: $space*2;
+    margin-top: $space * 2;
     position: absolute;
     text-align: center;
     text-transform: uppercase;
@@ -212,17 +240,17 @@ input[type=radio] + label {
 
     > span {
       background-color: $white;
-      border-radius: $space/2;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      border-radius: $space / 2;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
       display: inline-block;
-      padding: $space $space*3;
+      padding: $space $space * 3;
       position: relative;
       z-index: 2;
     }
 
     &:before {
       background-color: $white;
-      box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 1px rgba(0, 0, 0, .2);
       content: '';
       display: block;
       height: 16px;
@@ -246,27 +274,31 @@ input[type=radio] + label {
 
 }
 
-footer{
+footer {
   background-color: lighten($bg-color, 10%);
-  margin-top: $space * 3;
+  font-size: .8em;
   padding: $space * 1;
-  font-size: 0.8em;
+
   a {
     color: lighten($secondary-color, 20%);
   }
 }
 
 .hide-defaults {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   margin: 16px;
   margin-right: 32px;
-  label{
-    margin-left: $space/2;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  label {
+    margin-left: $space / 2;
   }
+
   @media(max-width: 480px) {
+    bottom: 0;
     margin: 8px;
     margin-top: $space;
+    top: auto;
   }
 }

@@ -66,13 +66,18 @@ class DrinkOrder extends React.Component {
   }
 
   render() {
-    return (<div>
-      <div className="container">
-        <form>
-          {this.getSelectors()}
-        </form>
+    return (<div className='order'>
+      <div className='order-form'>
+        <div className="container">
+          <h1>How to Kopi</h1>
+          <form>
+            {this.getSelectors()}
+          </form>
+        </div>
       </div>
-      <DrinkDisplay drink={this.state.drink} />
+      <div className="order-display">
+        <DrinkDisplay drink={this.state.drink} />
+      </div>
     </div>);
   }
 }

@@ -81,19 +81,19 @@ class DrinkVisualizer extends React.Component {
         >
           {this.getLiquids()}
         </div>
-      </div>
-      <div
-        className="pos-relative"
-        style={{
-          zIndex: 3,
-        }}
-      >
-        <Temperature
-          temperature={temp}
-          width={50}
-          height={25}
-          offsetTop={-this.state.liquidHeight - 25/2}
-        />
+        <div
+          className="pos-relative"
+          style={{
+            zIndex: 3,
+          }}
+        >
+          <Temperature
+            temperature={temp}
+            width={50}
+            height={25}
+            offsetTop={-this.state.liquidHeight - 25/2}
+          />
+        </div>
       </div>
     </div>);
   }
