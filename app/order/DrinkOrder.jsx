@@ -5,6 +5,14 @@ import Drink from 'drink/Drink';
 import DrinkDisplay from 'drink/DrinkDisplay';
 import Utils from 'util/Utils';
 
+function Footer() {
+  return (<footer>
+    <div className="container">
+      <p>WIP lovingly made by <a href="http://twitter.com/piratefsh">Sher Minn</a> and <a href="http://jasonkung.com">Jason</a>. Kopirights © 2017 Howtokopi.com.</p>
+    </div>
+  </footer>);
+}
+
 class DrinkOrder extends React.Component {
   constructor(props) {
     super(props);
@@ -66,14 +74,15 @@ class DrinkOrder extends React.Component {
   }
 
   render() {
-    return (<div className='order'>
-      <div className='order-form'>
+    return (<div className="order">
+      <div className="order-form">
         <div className="container">
           <h1>How to Kopi</h1>
           <form>
             {this.getSelectors()}
           </form>
         </div>
+        <Footer />
       </div>
       <div className="order-display">
         <DrinkDisplay drink={this.state.drink} />

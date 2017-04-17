@@ -1,5 +1,6 @@
 @import '~normalize.css/normalize.css';
 @import 'constants';
+@import 'form';
 @import 'visualizer';
 
 body {
@@ -28,6 +29,8 @@ body {
 
   .order-form {
     flex: 2;
+    max-height: 100vh;
+    overflow-y: scroll;
     @media(max-width: 480px) {
     }
   }
@@ -46,7 +49,7 @@ body {
 }
 
 header {
-  box-shadow: 0 0 5px darken($secondary-color, 30%);
+  // box-shadow: 0 0 5px darken($secondary-color, 30%);
   box-sizing: border-box;
   padding: $space * 2 0;
   position: relative;
@@ -85,99 +88,6 @@ header {
   @media(max-width: 480px) {
     height: $header-height-sm;
     padding: $space 0;
-  }
-}
-
-form {
-  display: flex;
-  flex-flow: row wrap;
-
-  @media(max-width: 480px) {
-    display: block;
-  }
-}
-
-fieldset {
-  border: 0;
-  box-sizing: border-box;
-  margin: 0;
-  margin-top: $space * 3;
-  padding: 0;
-  padding-right: $space * 3 - $space / 2;
-  width: 50%;
-
-  @media(max-width: 480px) {
-    width: 100%;
-  }
-}
-
-.fieldset-sm {
-  color: $grey;
-  font-size: .8em;
-}
-
-label,
-.label {
-  margin-bottom: $space;
-
-  em {
-    color: $grey;
-    font-size: .8em;
-  }
-}
-
-input,
-select {
-  border: 1px solid #cccccc;
-}
-
-input[type=radio] + label {
-  margin-left: $space;
-}
-
-.input-group {
-  box-sizing: border-box;
-  padding-right: $space*2;
-  vertical-align: middle;
-
-  &:nth-child(2) {
-    border-width: 50%;
-    padding-top: $space;
-
-    &:before {
-      background-color: lighten($secondary-color, 10%);
-      content: '';
-      display: block;
-      height: 1px;
-      position: relative;
-      top: -$space;
-      width: 80%;
-    }
-  }
-
-  &.input-group-hoverable {
-    > div {
-      border-radius: $space / 2;
-      padding: $space / 2;
-      transition: all .3s;
-
-      &:hover,
-      &:focus {
-        background-color: rgba(255, 255, 255, .1);
-      }
-    }
-  }
-
-  * {
-    vertical-align: middle;
-  }
-
-  > div {
-    margin-bottom: $space / 2;
-  }
-
-  .label {
-    font-weight: bold;
   }
 }
 
@@ -277,6 +187,7 @@ input[type=radio] + label {
 footer {
   background-color: lighten($bg-color, 10%);
   font-size: .8em;
+  margin-top: $space * 3;
   padding: $space * 1;
 
   a {
