@@ -1,5 +1,6 @@
-var path = require('path'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin')
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
     entry: {
@@ -44,7 +45,7 @@ module.exports = {
                 loader: 'file'
             },
             // Fonts
-            { 
+            {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
                 loader: "url-loader?limit=10000&minetype=application/font-woff" 
             },
@@ -64,6 +65,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json', '']
     },
     plugins: [
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('styles.css'),
+        new ManifestPlugin(),
     ]
 }

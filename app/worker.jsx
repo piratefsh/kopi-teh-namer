@@ -1,22 +1,18 @@
-console.log('hi from worker')
 self.addEventListener('install', function(e){
   e.waitUntil(
     caches.open('v1').then(function(cache) {
-      return cache.addAll([
-        '/index.html',
-        '/bundle.js',
-        '/styles.css',
-        ])
+      fetch('manifest.json')
+      .then((response) => response.json())
+      .then((assetMap) => {
+        const assets = [];
+        for(let k in assetMap){
+          assets.push('/' + assetMap[k])
+        }
+        assets.push('/')
+        return cache.addAll(assets)
+      })
     })
   )
-})
-
-self.addEventListener('fetch', function(e) {
-  console.log('fetching', e.request)
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request)
-    }))
 })
 
 self.addEventListener('fetch', function(event) {
@@ -25,6 +21,7 @@ self.addEventListener('fetch', function(event) {
       return fetch(event.request);
     }).then(function(response) {
       caches.open('v1').then(function(cache) {
+        console.log(event.request, response);
         cache.put(event.request, response);
       });
       return response.clone();
