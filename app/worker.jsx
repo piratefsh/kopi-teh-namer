@@ -26,6 +26,7 @@ self.addEventListener('fetch', function(event) {
           console.log(event.request, response);
           cache.put(event.request, response);
         });
-      return response.clone();
-    });
+        return response.clone();
+      })
+  );
 });

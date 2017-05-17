@@ -59,7 +59,7 @@
 
 	__webpack_require__(4);
 
-	var _fileNameWorkerJsBabelWorker = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"file?name=worker.js!babel!./worker\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _fileNameWorkerJsBabelWorker = __webpack_require__(9);
 
 	var _fileNameWorkerJsBabelWorker2 = _interopRequireDefault(_fileNameWorkerJsBabelWorker);
 
@@ -117,7 +117,12 @@
 /* 6 */,
 /* 7 */,
 /* 8 */,
-/* 9 */,
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "worker.js";
+
+/***/ },
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 

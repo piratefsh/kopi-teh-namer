@@ -7,5 +7,6 @@
   "bundle.js": "bundle.js",
   "hot-steam.svg": "7254291a6e5478d540d1083c36f3a87e.svg",
   "index.html": "index.html",
-  "liquid-bg-nopadding.svg": "2107c02417779b2688039c893a46ff1f.svg"
+  "liquid-bg-nopadding.svg": "2107c02417779b2688039c893a46ff1f.svg",
+  "worker.jsx": "worker.js"
 }
