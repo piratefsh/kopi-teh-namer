@@ -9,7 +9,7 @@ self.addEventListener('install', function (e) {
       for (var k in assetMap) {
         assets.push('/' + assetMap[k]);
       }
-      assets.push('/');
+      assets.push('/kopi-teh-namer/public/');
       return cache.addAll(assets);
     });
   }));
