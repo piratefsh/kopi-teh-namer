@@ -11,7 +11,7 @@ ReactDOM.render(
 );
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register(swUrl, {scope: '/'})
+  navigator.serviceWorker.register(swUrl, {scope: '/kopi-teh-namer/public/'})
     .then(() => {
       console.log('registration success!')
     })
