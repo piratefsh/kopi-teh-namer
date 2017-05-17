@@ -21,8 +21,10 @@ self.addEventListener('fetch', function(event) {
       return fetch(event.request);
     }).then(function(response) {
       caches.open('v1').then(function(cache) {
+        if(response){
+          cache.put(event.request, response);
+        }
         console.log(event.request, response);
-        cache.put(event.request, response);
       });
       return response.clone();
     }).catch(function() {
