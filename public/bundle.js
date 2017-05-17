@@ -78,7 +78,7 @@
 	_reactDom2['default'].render(_react2['default'].createElement(_orderDrinkOrder2['default'], null), document.getElementById('main'));
 
 	if ('serviceWorker' in navigator) {
-	  navigator.serviceWorker.register(_fileNameWorkerJsBabelWorker2['default'], { scope: '/' }).then(function () {
+	  navigator.serviceWorker.register(_fileNameWorkerJsBabelWorker2['default'], { scope: '/kopi-teh-namer/public/' }).then(function () {
 	    console.log('registration success!');
 	  })['catch'](function (err) {
 	    console.log('registration failed');
